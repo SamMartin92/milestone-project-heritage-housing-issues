@@ -53,6 +53,8 @@ Although your friend has an excellent understanding of property prices in her ow
 ## ML Business Case
 * In the previous bullet, you potentially visualized a ML task to answer a business requirement. You should frame the business case using the method we covered in the course 
 
+* Need to use at least 6 diff hyperparameters with 3 distinct acceptable values each (refer back to Scikit learn unit notebook 6: Cross Validation Search Part 2)
+
 
 ## Dashboard Design
 * List all dashboard pages and its content, either block of information or widgets, like: buttons, checkbox, image, or any other item that your dashboard library supports.
