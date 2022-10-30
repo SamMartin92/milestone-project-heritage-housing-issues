@@ -43,7 +43,14 @@ Although your friend has an excellent understanding of property prices in her ow
 
 
 ## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision to validate it (them) 
+* 1 - Larger houses will tend to have sell at a higher price. Therefore, houses with greater 1stFlrSF will have have a higher sales price.
+  * This will be validated with a correlation study
+
+* 2 - The overall condition of the house will result in a higher sale price. Therefore, we believe houses with a similar 1stFlrSF, with a higher OverallCond rating, will have higher Sales Price than those with a lower rating.
+   * This will be validated with a correlation study.
+ 
+* 3 - Houses with Garages will tend to have a higher Sales Price than those without. And those with large garages will tend to sell at higher prices. Therefore, houses with a large GarageArea will have a higher SalePrice.
+   * This will be validated with a correlation study.
 
 
 ## Rationale to map the business requirements to the Data Visualizations and ML tasks
