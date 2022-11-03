@@ -58,9 +58,26 @@ Although your friend has an excellent understanding of property prices in her ow
 
 
 ## ML Business Case
-* In the previous bullet, you potentially visualized a ML task to answer a business requirement. You should frame the business case using the method we covered in the course 
 
-* Need to use at least 6 diff hyperparameters with 3 distinct acceptable values each (refer back to Scikit learn unit notebook 6: Cross Validation Search Part 2)
+### *From distinction sample project video:*
+   * You should use the proper ML Terminology in your ML business
+case section, that includes keywords like: labels, target, features, variables, attributes,
+the learning method, and the machine learning tasks you will use in your project.
+Also, keywords like: train or fit a model, model output, model metrics and prediction. Naturally,
+the keywords should exist in the proper context of the sentence and they would not
+be considered keywords if the context doesn't fit the sentence.
+
+* We want an ML model to predict...
+
+* Our ideal outcome is...
+
+* The model success metrics are...
+
+* The output is defined...
+
+* Heuristics:...
+
+* The training data...
 
 
 ## Dashboard Design
