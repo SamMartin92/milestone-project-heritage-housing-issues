@@ -15,6 +15,10 @@ def page_project_summary_body():
         "\n 2. The client is interested in predicting the house sales price from her four inherited houses, and any other house in Ames, Iowa."
     )
 
+    st.write(
+        f"* For additional information, please visit and **read** the "
+        f"[Project README file](https://github.com/SamMartin92/milestone-project-heritage-housing-issues).")
+
     st.info(
         "## **Project Dataset:**\n"
         "* We have located and chosen a publicly available dataset of properties sold in Ames, Iowa. It has information on 24 seperate features per property and we use it to build our ML model to predict sale prices and to study which features correlate to the sale price most closley."
