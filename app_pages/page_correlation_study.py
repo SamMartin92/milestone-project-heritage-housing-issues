@@ -91,8 +91,6 @@ def page_correlation_study():
     
 
 
-    
-
 def load_plots_and_conclusions(df,cols_and_conclusions,plot_numerical):
     df_disc, hue_order = sale_price_discretisation(df)
     variables = list(cols_and_conclusions.keys())
@@ -107,27 +105,12 @@ def load_plots_and_conclusions(df,cols_and_conclusions,plot_numerical):
             plot_numerical(df_disc, variable, 'SalePrice', hue_order)
 
     
-
-
-# def load_plots_and_conclusions(df,cols_and_conclusions,plot_numerical):
-#     df_disc, hue_order = sale_price_discretisation(df)
-
-#     for key, value in cols_and_conclusions.items():
-#         st.success(
-#             f"* {value}"
-#         )
-#         if st.checkbox(f"{key} Visualisation", key = key):
-#             plot_numerical(df_disc, key, 'SalePrice', hue_order)
-
 def print_conclusions(cols_and_conclusions):
     conclusions = ""
     for conclusion in list(cols_and_conclusions.values()):
         conclusions += f"* {conclusion}\n"
 
-    return conclusions
-
-    
-    
+    return conclusions   
     
 
 def plot_numerical(df, col, target_var, hue_order):
