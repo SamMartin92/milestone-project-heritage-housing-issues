@@ -77,7 +77,7 @@ def page_correlation_study():
     st.info( """
         During feature engineering, heatmaps were produced to study the correlation levels and PPS 
         between all variables in our dataset. These can be seen below, showing only variables whose correlation 
-        and PPS are greater than 0.4 & 0.2 respectfully.
+        and PPS are greater than 0.4 & 0.2 respectively.
         """)
 
     if st.checkbox("Pearson Correlation"):

@@ -26,7 +26,7 @@ def page_hyp_study_body():
             * **Correct**. There is a strong linear correlation between 'GarageArea' and 'SalePrice'.
             * It is clear from our study that houses without garages sell overwhelmingly in the lowest price range.
             * It can be seen too that the bulk of the properties sold in the lowest price range have a garage are of only 200-400 square foot whereas
-                the bulk of the properties sold wihtin th highest prie range have a garage area of at least 600 square foot and fall between 600-900 square foot range.
+                the bulk of the properties sold wihtin the highest price range have a garage area of at least 600 square foot and fall between 600-900 square foot range.
         """
     )
 
