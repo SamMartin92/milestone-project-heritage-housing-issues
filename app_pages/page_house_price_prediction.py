@@ -58,7 +58,8 @@ def page_house_price_prediction_body():
         st.write(
             f"${sale_price_prediction}"
         )
-        
+
+       
 def DrawInputWidgets(version, features):
 
     df = load_housing_data()
