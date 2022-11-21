@@ -58,18 +58,21 @@ Although your friend has an excellent understanding of property prices in her ow
 
 
 ## Rationale to map the business requirements to the Data Visualizations and ML tasks
-* List your business requirements and a rationale to map them to the Data Visualizations and ML tasks
+* Business Requirement 1: Correlation Study and Data Visualisation
+    * We will inspect the data related to the house sales within our dataset.
+    * A correlation study will be conducted to understand which factors affect the sale price of a house most strongly.
+      * We will study both Pearson and Spearman levels of correlation.
+    * We will plot the most strongly correlated and relevant variables against Sale Price to understand our insights more clearly.
+    * Our correlation study and visualisations will asist in validating our project hypotheses.
+
+* Business Requirment 2: Building a Regression Pipeline
+    * We want to predict the Sale Price of our client's inherited homes and any other houses in the area.
+    * We will train a regression model on our data. This should be the most suitable option as the Sale price of a property is represented as a continuous numeric value in our dataset.
+    * We will fine tune our model by fitting a number of hyperparameters and testing the performance for each combination.
+    * We hope to fit a pipeline which exceeds our performance metric by this process
 
 
 ## ML Business Case
-
-### *From distinction sample project video:*
-   * You should use the proper ML Terminology in your ML business
-case section, that includes keywords like: labels, target, features, variables, attributes,
-the learning method, and the machine learning tasks you will use in your project.
-Also, keywords like: train or fit a model, model output, model metrics and prediction. Naturally,
-the keywords should exist in the proper context of the sentence and they would not
-be considered keywords if the context doesn't fit the sentence.
 
 * We want an ML model to predict:
   1. The combined sale price of our client's 4 inherited houses in Ames, Iowa.
