@@ -1,6 +1,6 @@
 # Heritage Housing Issues
 
-Link to live dashbard can be accessed [here](###).
+Link to live dashbard can be accessed [here](https://heritage-housing-issues.herokuapp.com/).
 
 ## Dataset Content
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We created then a fictitious user story where predictive analytics can be applied in a real project in the workplace. 
@@ -121,7 +121,18 @@ be considered keywords if the context doesn't fit the sentence.
        * The OverallCond rating of a home does not necessarily lend to greater Sale Price, regardless of size.
       
  4. Page 4: ML Model
-    * 
+    * This page displays the current iteration of the ML pipeline and will be of interest to technical users.
+    * The ML pipeline is displayed, including the features used to fit the model and their importance, are displayed.
+    * The performance of the current iteration, and whether it meets the performace criteria, is stated.
+    * The regression plots for both the Train & Test Set are presented to the user.
+ 
+ 5. Page 5: House Price prediction
+    * This page is designed to answer Business Requirement 2.
+    * The inherited houses data is available to view.
+    * A prediction is made on the sale price of each home using the ML model presented in Dashboard: Page 4.
+    * The total sum the client can expect to receive from the sale of her inherited properties is displayed.
+    * There are input widgets which will take values for the house attributes on which the model was trained.
+        * A user can enter attributes for a specific property into the inputs and using the 'Predict Sale Price' button, can run the values through the ML model and output a predicted sale price for a house with those features.
 
 
 
@@ -131,7 +142,7 @@ be considered keywords if the context doesn't fit the sentence.
 ## Deployment
 ### Heroku
 
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
+* The App live link is: [(https://heritage-housing-issues.herokuapp.com/](https://heritage-housing-issues.herokuapp.com/)
 * The project was deployed to Heroku using the following steps.
 
 1. Log in to Heroku and create an App
