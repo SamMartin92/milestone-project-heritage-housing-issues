@@ -1,3 +1,7 @@
+# Heritage Housin Issues
+
+Link to live dashbard can be accessed [here](###).
+
 ## Dataset Content
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We created then a fictitious user story where predictive analytics can be applied in a real project in the workplace. 
 * The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa; indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
@@ -44,13 +48,13 @@ Although your friend has an excellent understanding of property prices in her ow
 
 ## Hypothesis and how to validate?
 * 1 - Larger houses will tend to have sell at a higher price. Therefore, houses with greater 1stFlrSF will have have a higher sales price.
-  * This will be validated with a correlation study
+  * This will be validated with a correlation study & relevant visualisations.
 
 * 2 - The overall condition of the house will result in a higher sale price. Therefore, we believe houses with a similar 1stFlrSF, with a higher OverallCond rating, will have higher Sales Price than those with a lower rating.
-   * This will be validated with a correlation study.
+   * This will be validated with a correlation study & relevant visualisations.
  
 * 3 - Houses with Garages will tend to have a higher Sales Price than those without. And those with large garages will tend to sell at higher prices. Therefore, houses with a large GarageArea will have a higher SalePrice.
-   * This will be validated with a correlation study.
+   * This will be validated with a correlation study & relevant visualisations.
 
 
 ## Rationale to map the business requirements to the Data Visualizations and ML tasks
@@ -67,11 +71,15 @@ Also, keywords like: train or fit a model, model output, model metrics and predi
 the keywords should exist in the proper context of the sentence and they would not
 be considered keywords if the context doesn't fit the sentence.
 
-* We want an ML model to predict...
+* We want an ML model to predict:
+  1. The combined sale price of our client's 4 inherited houses in Ames, Iowa.
+  2. The sale price of any house in Ames, Iowa.
+  * In this case, our target variable to predict, is 'SalePrice' which represents the sale price in USD of each home in the dataset.
 
-* Our ideal outcome is...
+* Our ideal outcome is to produce a Machine Learning pipeline which will produce a Sale Price prediction to meet our business requirement. Ideally, this pipeline will be trained on only the most important features in our dataset. 
+  * It would, therefore, be capable of predicting the sale price of a home with fewer house attributes than is represented in one of the rows in our dataset.
 
-* The model success metrics are...
+* The model success metrics are and R2 score > 0.75 on both our train and test sets.
 
 * The output is defined...
 
