@@ -21,7 +21,7 @@ def page_project_summary_body():
 
     st.info(
         "## **Project Dataset:**\n"
-        "* We have located and chosen a publicly available dataset of properties sold in Ames, Iowa. It has information on 24 seperate features per property and we use it to build our ML model to predict sale prices and to study which features correlate to the sale price most closley."
+        "* We have located and chosen a publicly available dataset of properties sold in Ames, Iowa. It has information on 24 seperate features per property and we use it to fit our ML model to predict sale prices and to study which features correlate to the sale price most closley."
         "\n* 'SalePrice' will be our focus in this project and represents the price the property was sold for in USD in our dataset."
         "\n* It is our **target** variable, that is, it will be the value we wish to predict using the features provided to us from Lydia's inherited properties."
         "\n* Our dataset has been retrieved from the following [location](https://www.kaggle.com/datasets/codeinstitute/housing-prices-data). Information on each feature can be seen below:"

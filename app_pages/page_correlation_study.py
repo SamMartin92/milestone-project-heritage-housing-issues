@@ -81,13 +81,13 @@ def page_correlation_study():
         """)
 
     if st.checkbox("Pearson Correlation"):
-        heatmap_corr(df=df_corr_pearson,threshold=0.4, figsize=(20,12), font_annot = 8)
+        heatmap_corr(df=df_corr_pearson,threshold=0.4, figsize=(20,14), font_annot = 14)
 
     if st.checkbox("Spearman Correlation"):    
-        heatmap_corr(df=df_corr_spearman,threshold=0.4, figsize=(20,12), font_annot = 8)
+        heatmap_corr(df=df_corr_spearman,threshold=0.4, figsize=(20,14), font_annot = 14)
 
     if st.checkbox("Predictive Power Score"): 
-        heatmap_pps(df=pps_matrix,threshold=0.2, figsize=(20,12), font_annot = 8)
+        heatmap_pps(df=pps_matrix,threshold=0.2, figsize=(20,14), font_annot = 14)
     
 
 
@@ -157,7 +157,7 @@ def calculate_corr_and_pps(df):
     return df_corr_pearson, df_corr_spearman, pps_matrix
 
 
-def heatmap_corr(df,threshold, figsize=(20,12), font_annot = 8):
+def heatmap_corr(df,threshold, figsize=(20,14), font_annot = 14):
   if len(df.columns) > 1:
     mask = np.zeros_like(df, dtype=np.bool)
     mask[np.triu_indices_from(mask)] = True
@@ -166,9 +166,10 @@ def heatmap_corr(df,threshold, figsize=(20,12), font_annot = 8):
     fig, axes = plt.subplots(figsize=figsize)
     sns.heatmap(df, annot=True, xticklabels=True, yticklabels=True,
                 mask=mask, cmap='viridis', annot_kws={"size": font_annot}, ax=axes,
-                linewidth=0.5
+                linewidth=0.5, 
                      )
-    axes.set_yticklabels(df.columns, rotation = 0)
+    axes.set_yticklabels(df.columns, rotation = 0, fontsize =20)
+    axes.set_xticklabels(df.columns, fontsize =20)
     plt.ylim(len(df.columns),0)
     st.pyplot(fig)
 
@@ -176,16 +177,18 @@ def heatmap_corr(df,threshold, figsize=(20,12), font_annot = 8):
 def heatmap_pps(df,threshold, figsize=(20,12), font_annot = 8):
     if len(df.columns) > 1:
 
-      mask = np.zeros_like(df, dtype=np.bool)
-      mask[abs(df) < threshold] = True
+        mask = np.zeros_like(df, dtype=np.bool)
+        mask[abs(df) < threshold] = True
 
-      fig, ax = plt.subplots(figsize=figsize)
-      ax = sns.heatmap(df, annot=True, xticklabels=True,yticklabels=True,
-                       mask=mask,cmap='rocket_r', annot_kws={"size": font_annot},
-                       linewidth=0.05,linecolor='grey')
-      
-      plt.ylim(len(df.columns),0)
-      st.pyplot(fig)
+        fig, ax = plt.subplots(figsize=figsize)
+        ax = sns.heatmap(df, annot=True, xticklabels=True,yticklabels=True,
+                        mask=mask,cmap='rocket_r', annot_kws={"size": font_annot},
+                        linewidth=0.05,linecolor='grey')
+        ax.set_yticklabels(df.columns, rotation = 0, fontsize =20)
+        ax.set_xticklabels(df.columns, fontsize =20)
+
+        plt.ylim(len(df.columns),0)
+        st.pyplot(fig)
 
 
 

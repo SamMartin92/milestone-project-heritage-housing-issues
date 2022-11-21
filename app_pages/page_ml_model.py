@@ -24,9 +24,10 @@ def page_ml_model_body():
     st.info(
             f"* An ML pipeline was developed to answer our client's second business requirement "
             f"of *'predicting the sale price from any house in Ames, Iowa in case of future property ownership in that area.'*\n"
-            f"* It was decided a regressor model would be the most suitable model to predict sale price to our project requirement:"
+            f"* It was decided a regressor model would be the most suitable model to predict sale price to our project requirement: "
             f"**An R2 score > 0.75** on train and test sets.\n"
-            f"* Version 1 of this pipeline delivered an R2 score of **0.885** & **0.782** on our train and test sets respectively.\n"
+            f"* Version 1 of this pipeline delivered an R2 score of **0.885** & **0.782** on our train and test sets respectively. "
+            f"This meets our business requirement.\n"
             f"* Further data cleaning and feature engineering steps have taken place attempting to tune the model to higher score"
             f" and the current version: **'{version}'** delivers an R2 score of:\n"
             f"  * {r2_train_score} on TrainSet\n"
