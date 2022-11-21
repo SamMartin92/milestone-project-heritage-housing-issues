@@ -83,6 +83,7 @@ Although your friend has an excellent understanding of property prices in her ow
   * It would, therefore, be capable of predicting the sale price of a home with fewer house attributes than is represented in one of the rows in our dataset.
 
 * The model success metrics are and R2 score > 0.75 on both our train and test sets.
+  * We will fit a regression model to achieve this.
   * The model will be considered a failure if:
     * Our target R2 score is not reached.
     * The final sale price of the four inherited properties differs by more than 25% of our final predicted total summed sale price.
@@ -156,7 +157,20 @@ Although your friend has an excellent understanding of property prices in her ow
 
 
 ## Main Data Analysis and Machine Learning Libraries
-* Here you should list the libraries you used in the project and provide example(s) on how you used these libraries.
+* streamlit
+* Numpy
+* Pandas
+* pandas_profiling
+* feature_engine - data cleaning, feature engineering imputation, encoding, discretiser, handle outlier, drop features, smart correlated selection, transformation
+* sklearn - feature scaling, select from model, gridsearchCV, split test and train, algortihms, scores-r2 score
+* xgboost- XGBRegressor
+* seaborn
+* matplotlib
+* ppscore
+* scipy
+* os
+* joblib- pipeline pkl file
+* zipfile
 
 
 ## Credits 
