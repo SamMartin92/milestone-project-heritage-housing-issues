@@ -1,3 +1,7 @@
+# Heritage Housing Issues
+
+Link to live dashbard can be accessed [here](###).
+
 ## Dataset Content
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We created then a fictitious user story where predictive analytics can be applied in a real project in the workplace. 
 * The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa; indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
@@ -44,13 +48,13 @@ Although your friend has an excellent understanding of property prices in her ow
 
 ## Hypothesis and how to validate?
 * 1 - Larger houses will tend to have sell at a higher price. Therefore, houses with greater 1stFlrSF will have have a higher sales price.
-  * This will be validated with a correlation study
+  * This will be validated with a correlation study & relevant visualisations.
 
 * 2 - The overall condition of the house will result in a higher sale price. Therefore, we believe houses with a similar 1stFlrSF, with a higher OverallCond rating, will have higher Sales Price than those with a lower rating.
-   * This will be validated with a correlation study.
+   * This will be validated with a correlation study & relevant visualisations.
  
 * 3 - Houses with Garages will tend to have a higher Sales Price than those without. And those with large garages will tend to sell at higher prices. Therefore, houses with a large GarageArea will have a higher SalePrice.
-   * This will be validated with a correlation study.
+   * This will be validated with a correlation study & relevant visualisations.
 
 
 ## Rationale to map the business requirements to the Data Visualizations and ML tasks
@@ -67,22 +71,57 @@ Also, keywords like: train or fit a model, model output, model metrics and predi
 the keywords should exist in the proper context of the sentence and they would not
 be considered keywords if the context doesn't fit the sentence.
 
-* We want an ML model to predict...
+* We want an ML model to predict:
+  1. The combined sale price of our client's 4 inherited houses in Ames, Iowa.
+  2. The sale price of any house in Ames, Iowa.
+  * In this case, our target variable to predict, is 'SalePrice' which represents the sale price in USD of each home in the dataset.
 
-* Our ideal outcome is...
+* Our ideal outcome is to produce a Machine Learning pipeline which will produce a Sale Price prediction to meet our business requirement. Ideally, this pipeline will be trained on only the most important features in our dataset. 
+  * It would, therefore, be capable of predicting the sale price of a home with fewer house attributes than is represented in one of the rows in our dataset.
 
-* The model success metrics are...
+* The model success metrics are and R2 score > 0.75 on both our train and test sets.
+  * The model will be considered a failure if:
+    * Our target R2 score is not reached.
+    * The final sale price of the four inherited properties differs by more than 25% of our final predicted total summed sale price.
 
-* The output is defined...
+* The output is defined as a:
+  * a prediction of a continuous value representing the final USD sale price of our client's inherited properties
+  * a prediction of a continuous value of the final USD sale price of any house in Ames, Iowa given specific attributes for the property
 
-* Heuristics:...
+* Heuristics: Currently, we have no reliable means of estimating the sale price of a house in Ames, Iowa. While our client is quite knowledgeable about house prices in her native Belgium, what makes a house attractive or valuable in Iowa is unknown.
+   * Within our project hypotheses, we have made some predictions but these are to be validated.
 
-* The training data...
+* The training data to fit our model comes from a publily available Kaggle dataset. The dataset contains 1,460 rows of data, each representing a house sold in Ames, Iowa and containing up to 24 features, which hold data relating to a specific attribute of the house.
+  * The TrainSet of the data containfs 'SalePrice' as the target variable and all other varaibles, apart from, in the current iteration of our pipeline, 'EnclosedPorch' and 'WoodDeckSF'.
 
 
 ## Dashboard Design
 * List all dashboard pages and its content, either block of information or widgets, like: buttons, checkbox, image, or any other item that your dashboard library supports.
 * Eventually, during the project development, you may revisit your dashboard plan to update a give feature (for example, in the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
+1. Page 1: Project Summary
+   * Background and reason for inception of our project.
+   * Our business requirements are set out.
+   * The source and context of our dataset is explained. A table eplaining each feature of our dataset is available to view.
+ 
+ 2. Page 2: Sale Price Correlation Study
+    * This page was designed to answer our Business Requirement 1.
+    * It contains the output of our correlation study which has taken place in the SalesPriceStudy notebook.
+    * A portion of our dataset is displayed and its context is explained..
+    * The conclusions of our correlation study are presented and a select box feature allows the user to choose a feature, from among those most strongly correlated with the sale price of a home, against Sale Price ranges.
+    * Further information on correlation within our dataset is presented also:
+       * Heatmaps displaying correlation levels bewteen variables can be viewed through checkboxes.
+       * A heatmap displaying PPS levels can be viewed through a checkbox.
+  
+3. Page 3: Project Hypotheses
+    * Before analysis, it was known that we would want a page to describe our prject hypotheses, our conclusions and how we validated them. 
+    * This page confirms hypothesess 1 & 3:
+       * Larger Houses (those with greater 1stFlrSF) tend to sell at higher prices.
+       * Homes with garages tend to sell at higher prices than those without, and those with large garages sell at higher prices.
+    * This page shows hypothesis to be inconclusive:
+       * The OverallCond rating of a home does not necessarily lend to greater Sale Price, regardless of size.
+      
+ 4. Page 4: ML Model
+    * 
 
 
 
