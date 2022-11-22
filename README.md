@@ -68,6 +68,9 @@ Although your friend has an excellent understanding of property prices in her ow
   * **As a client** I want an explanation of the data **so that** I can understand what each column represents to more clearly comprehend the attributes which factor into the sale price of a property.
     * Bus Requirment: BR1
     * Satisfied: Context for each column provided in README and dashboard (Project Summary)
+  * **As a technical user** I want to know the content and source of the data **so that** I can trust the quality of the project's input.
+    * Bus Requirment: BR1 & BR2
+    * Satisfied: Dashboard (Project Summary)
 ### 2. Data visualization, cleaning, and preparation
   * **As a client** I want to see relevant plots showing how house attributes relate to the sale price **so that** I can gain a better understanding of what features are important when estimating what a property is worth.
     * Bus Requirment: BR1
@@ -75,20 +78,51 @@ Although your friend has an excellent understanding of property prices in her ow
   * **As a client** I want to discover how house attributes correlate with sales price **so that** I know which attributes most strongly affect the sale price of a property.
     * Bus Requirment: BR1
     * Satisfied: Dashboard (Sale Price Correlation Study)
+  * **As a technical user** I want to see how the data was prepared prior to modelling **so that** i can gain insight into the Data Cleaning & Feature Engineering steps used.
+    * Bus Requirment: BR2
+    * Satisfied: Dashboard (ML Model)
   * **As a data practitoner** I want to have a means of cleaning the data **so that** there is no corrupted or incomplete data within the dataset for ML modelling.
     * Bus Requirment: BR2
     * Satisfied: Jupyter Notebook (DataCleaning)
   * **As a data practitoner** I want to have a means of engineering the data **so that** the data is compatible with ml tasks and the variable distribution can lend itself to more accurate predictions.
     * Bus Requirment: BR2
-    * Satisfied: Jupyter Notebook (FeatureEngineering)
-  
-
+    * Satisfied: Jupyter Notebook (FeatureEngineering)  
 ### 3. Model training, optimization and validation.
-
+  * **As a client** I want to predict the the value of the properties I have inherited **so that** I know how much they are worth and maximise their sale value.
+    * Bus Requirment: BR2
+    * Satisfied: Dashboard (House Price Prediction)
+  * **As a client** I want to predict the the value of any house in Ames, Iowa **so that** I have knowledge about the hosuing market in the area if I wish to purchase there in the future.
+    * Bus Requirment: BR2
+    * Satisfied: Dashboard (House Price Prediction)
+  * **As a data practitioner** I want a means of optimising the performance of the ML pipeline **so that** I can make the most accurate sale price prediction possible.
+    * Bus Requirment: BR2
+    * Satisfied: Jupyter Notebook (SalePricePredition)
+  * **As a technical user** I want to know how the model was trained **so that** I gain insight into the fine tuning of the ML task.
+    * Bus Requirment: BR2
+    * Satisfied: Dashboard (ML Model), Jupyter Notebook (SalePricePredition)
+  * **As a technical user** I want to know how the performance of the ML model **so that** I know how effiecient it is and how it was evaluated.
+    * Bus Requirment: BR2
+    * Satisfied: Dashboard (ML Model), Jupyter Notebook (SalePricePredition)    
 ### 4.  Dashboard planning, designing, and development.
-
+  * **As a client** I want to easily navigate through a dashboard **so that** I can easily find the information I desire. 
+    * Bus Requirment: BR2
+    * Satisfied: Dashboard (Side Menu)
+  * **As a client** I want interactive visualisations **so that** I may focus on specific elements of the data. 
+    * Bus Requirment: BR1
+    * Satisfied: Dashboard (Sale Price Correlation Study)
+  * **As a client** I want to be presented with the summed value of my inherited homes  **so that** I can have a reliable estimate of their value.
+    * Bus Requirment: BR2
+    * Satisfied: Dashboard (House Price Prediction) 
+  * **As a client** I want run sale price predictions using attributes for any Ames, Iowa property **so that** I can predict the sale price of a property I may wish to purchase in the future 
+    * Bus Requirment: BR2
+    * Satisfied: Dashboard (House Price Prediction)
+  * **As a technical user** I to know the project hypotheses and how they were validated **so that** I can gain insight into how conclusions were reached during data analysis.
+    * Bus Requirment: BR1
+    * Satisfied: Dashboard (Project Hypotheses)   
 ### 5.  Dashboard deployment and release.
-
+  * **As a client** I want a live site **so that** I can access the dashboard and make predictions whenever I wish.
+    * Bus Requirment: BR1 & BR2
+    * Satisfied: Dashboard 
 
 ## Rationale to map the business requirements to the Data Visualizations and ML tasks
 * Business Requirement 1: Correlation Study and Data Visualisation
