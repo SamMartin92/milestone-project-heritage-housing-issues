@@ -77,9 +77,12 @@ def page_correlation_study():
     load_plots_and_conclusions(df,cols_and_conclusions,plot_numerical)
 
     st.info( """
-        During feature engineering, heatmaps were produced to study the correlation levels and PPS 
-        between all variables in our dataset. These can be seen below, showing only variables whose correlation 
-        and PPS are greater than 0.4 & 0.2 respectively.
+        * During feature engineering, heatmaps were produced to study the correlation levels and PPS 
+        between all variables in our dataset.
+        * Heatmaps are available to view below showing only variables whose correlation levels (Pearson &
+        Spearman) are greater than 0.4
+        * Below these, there is the option to view a heatmap displaying PPS between all
+        features, displaying those greater than 0.2.
         """)
 
     if st.checkbox("Pearson Correlation"):

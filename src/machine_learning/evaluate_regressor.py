@@ -32,7 +32,7 @@ def regression_evaluation_plots(X_train, y_train, X_test, y_test, pipeline, alph
     pred_train = pipeline.predict(X_train)
     pred_test = pipeline.predict(X_test)
 
-    fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(16, 10))
+    fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(14, 10))
     sns.scatterplot(x=y_train['SalePrice'], y=pred_train, alpha=alpha_scatter, ax=axes[0])
     sns.lineplot(x=y_train['SalePrice'], y=y_train['SalePrice'], color='red', ax=axes[0])
     axes[0].set_xlabel("Actual")

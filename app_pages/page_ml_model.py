@@ -55,6 +55,8 @@ def page_ml_model_body():
 
     st.write(" ## Regression Plots:")
 
+    st.write("* Our ML model predictions on the Train & Test Sets")
+
     regression_evaluation_plots(X_train, y_train, X_test, y_test, pipeline_regressor)
 
 
