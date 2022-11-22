@@ -35,6 +35,7 @@ def page_ml_model_body():
         
     )
 
+ 
     st.write("## ML Pipeline to predict Sale Price of house:")
     st.write(pipeline_regressor)
     
@@ -42,7 +43,7 @@ def page_ml_model_body():
         """
             ### Feature importance
 
-            * Below are the features the model was trained on and their importance:
+            * Below are the features the current model was trained on and their importance:
         """)
     
     st.write(list(X_train.columns))

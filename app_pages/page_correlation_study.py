@@ -62,6 +62,8 @@ def page_correlation_study():
     st.write(
         """
         * Insight into these attributes and their values plotted against sales prices can be seen below.
+            * Each conclusion below maps to its respective plot which can be chosen by selecting the feature 
+            from the drop down menu.
             * All sale prices have been sorted into 6 ranges for a more general representation of the type
              of sale price one might expect for a property with a given attribute.
         """
