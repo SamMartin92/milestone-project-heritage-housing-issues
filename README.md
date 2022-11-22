@@ -35,8 +35,6 @@ Link to live dashbard can be accessed [here](https://heritage-housing-issues.her
 
 
 
-
-
 ## Business Requirements
 As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximizing the sales price for the inherited properties.
 
@@ -55,6 +53,41 @@ Although your friend has an excellent understanding of property prices in her ow
  
 * 3 - Houses with Garages will tend to have a higher Sales Price than those without. And those with large garages will tend to sell at higher prices. Therefore, houses with a large GarageArea will have a higher SalePrice.
    * This will be validated with a correlation study & relevant visualisations.
+
+## User Stories
+
+* This project can be broken down into 5 epics, each composed of a number of user stories which can be mapped to each business requirement.
+
+### 1. Data Collection
+  * **As a data practitioner** I want relevant data **so that** data analysis can be conducted and an ML pipeline can be developed.
+    * Bus Requirment: BR1 & BR2
+    * Satisfied: Publily available housing data sourced from Kaggle
+  * **As a data practitioner** I want house attribute data for the inherited properties **so that** a prediction on their sale price can be made once ML pipeline developed.
+    * Bus Requirment: BR2
+    * Satisfied: Full inherited housing data received from client
+  * **As a client** I want an explanation of the data **so that** I can understand what each column represents to more clearly comprehend the attributes which factor into the sale price of a property.
+    * Bus Requirment: BR1
+    * Satisfied: Context for each column provided in README and dashboard (Project Summary)
+### 2. Data visualization, cleaning, and preparation
+  * **As a client** I want to see relevant plots showing how house attributes relate to the sale price **so that** I can gain a better understanding of what features are important when estimating what a property is worth.
+    * Bus Requirment: BR1
+    * Satisfied: Dashboard (Sale Price Correlation Study) & Jupyter Notebooks (SalePriceStudy & FeatureEngineering)
+  * **As a client** I want to discover how house attributes correlate with sales price **so that** I know which attributes most strongly affect the sale price of a property.
+    * Bus Requirment: BR1
+    * Satisfied: Dashboard (Sale Price Correlation Study)
+  * **As a data practitoner** I want to have a means of cleaning the data **so that** there is no corrupted or incomplete data within the dataset for ML modelling.
+    * Bus Requirment: BR2
+    * Satisfied: Jupyter Notebook (DataCleaning)
+  * **As a data practitoner** I want to have a means of engineering the data **so that** the data is compatible with ml tasks and the variable distribution can lend itself to more accurate predictions.
+    * Bus Requirment: BR2
+    * Satisfied: Jupyter Notebook (FeatureEngineering)
+  
+
+### 3. Model training, optimization and validation.
+
+### 4.  Dashboard planning, designing, and development.
+
+### 5.  Dashboard deployment and release.
 
 
 ## Rationale to map the business requirements to the Data Visualizations and ML tasks
