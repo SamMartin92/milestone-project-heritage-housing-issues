@@ -252,13 +252,9 @@ Below is a list of the main libraries used in the creation of this project. An e
 * [Feature-engine](https://feature-engine.readthedocs.io/en/latest/)- A data engineering library with various transformer and feature selection methods for ML modelling. Some examples of its use in this project;  imputation of numerical and categorical data during data cleaning, categorical encoding to make data compatible for deeper data analysis, numerical transformation to normalise feature distribution during modelling, smart correlated selection step in ML pipeline creation and discretising data for the purpose of plotting data.
 * [Scikit-Learn](https://scikit-learn.org/)- A library which provides tools for data analytics. Scikit-Learn was used to create the pipeline,feature selection & splitting Train and Test sets. It is essential to the modelling stage as the algorithms tested on our data were imported from the library. sklearn methods were used to evaluate the performance algorithms and gridsearchcv was used during hyperparameter optimization in which the performance of different hyperparameters on given models were scored to test their efficiency in predictions. 
 * [XGBoost](https://xgboost.readthedocs.io/en/stable/)- A machine learning pipeline whih provides GradientBoosting methods. XGBRegressor was one of the algortihms tested druing pipeine optimization.
-* seaborn
-* matplotlib
-* ppscore
-* scipy
-* os
-* joblib- pipeline pkl file
-* zipfile
+* [matplotlib] (https://matplotlib.org/)- Matplotlib is a library used for creating data visiualisations. It was used to create visual plots in this project, mainly used in conjuction with Seaborn.
+* [seaborn](https://seaborn.pydata.org/index.html)- Seaborn is a library built on matplotlib. It was used in the creation of data visualisations in this project, such as correlation histograms and line plots, heatmaps and for regression performance.
+* [ppscore](https://pypi.org/project/ppscore/)- A library used in predicting the predictive power scores of the varaibles in the dataset.
 
 
 ## Credits 
