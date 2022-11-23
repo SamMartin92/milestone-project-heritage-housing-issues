@@ -231,16 +231,49 @@ Although your friend has an excellent understanding of property prices in her ow
 * You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
 
 ## Deployment
+* This site was developed in [Gitpod](https://www.gitpod.io/) and deployed to [Heroku](https://www.heroku.com/).
+* The site is a dashboard built with streamlit. 
+* The code to run the site was contained in [app.py](app.py).
+* It was developed by previewing the site in the browser by running the commadn `streamlit run app.py` in the command line and slecting the 5801 Port.
+* Changes and entries to the workspace were committed and pushed to this repository.
+
+### Setting up the project in Gitpod workspace:
+* For this project, a Code Institute template was used which is available at this [repository](https://github.com/Code-Institute-Solutions/milestone-project-heritage-housing-issues). To use this template, choose the 'Fork' option at the top right of the repository and open under your own Github profile.
+* If you do not wish to fork this repository, to deploy a stream lit app to Heroku, you will need to add the following files to your root directory:
+   * Create a shell file called setup.sh and add the following lines of code:
+```python
+mkdir -p ~/.streamlit/
+echo "\
+ [server]\n\
+headless = true\n\
+port = $PORT\n\
+enableCORS = false\n\
+\n\
+" > ~/.streamlit/config.toml
+```
+* Create a Procfile to specify how to run the app on Heroku and add the following line of code:
+```python
+web: sh setup.sh && streamlit run app.py
+```
+ * Once you are ready to deploy, create a requirements.txt file to specify all the libraries need to run this app. This can be created in your root directory by running the command `pip freeze --local > requirement.txt`.
+ * Create runtime.txt file in root directory and specify the version of pyhton you are running the app on.
+ * See steps on how project was deployed to Heroku below.
 ### Heroku
 
-* The App live link is: [(https://heritage-housing-issues.herokuapp.com/](https://heritage-housing-issues.herokuapp.com/)
+* The App live link is: [https://heritage-housing-issues.herokuapp.com/](https://heritage-housing-issues.herokuapp.com/)
+* 
 * The project was deployed to Heroku using the following steps.
 
 1. Log in to Heroku and create an App
 2. At the Deploy tab, select GitHub as the deployment method.
 3. Select your repository name and click Search. Once it is found, click Connect.
 4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly in case all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
+5. Ensure the version of python you are running in runtime.txt is compatible with your app's Heroku stack. If you need to set the heroku stack for your app, you can do so by running the following commands in the command line:
+    * Install Heroku by running `pip install heroku'
+    * Login by running `heroku login -i` and entering your login details
+    * Set remote to Heroku `heroku git:remote -a <APP-NAME>`
+    * Set stack `heroku stack:set <HEROKU-STACK> -a <APP-NAME>`  
+7. The deployment process should happen smoothly in case all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
 
 
 ## Main Data Analysis and Machine Learning Libraries
