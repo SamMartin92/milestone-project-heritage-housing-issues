@@ -244,13 +244,14 @@ Although your friend has an excellent understanding of property prices in her ow
 
 
 ## Main Data Analysis and Machine Learning Libraries
-* streamlit
-* Numpy
-* Pandas
-* pandas_profiling
-* feature_engine - data cleaning, feature engineering imputation, encoding, discretiser, handle outlier, drop features, smart correlated selection, transformation
-* sklearn - feature scaling, select from model, gridsearchCV, split test and train, algortihms, scores-r2 score
-* xgboost- XGBRegressor
+Below is a list of the main libraries used in the creation of this project. An exhaustive list of all libraries used can be seen in [requirements.txt](requirements.txt)
+* [Streamlit](https://streamlit.io/)- App framework on whihc the the dashboard was designed and created.
+* [Numpy](https://numpy.org/)- Used for working with arrays. Used to generate boolean arrays in plotting correlation heatmaps and returning Root Mean Squared Error in Regression Evaluation function
+* [Pandas](https://pandas.pydata.org/)- Data analysis tool used to convert the raw data for data frames and all methods of inspecting and manipulating the datasets
+* [pandas_profiling](https://pypi.org/project/pandas-profiling/)- Used to generate profile reports from DataFrames in our Jupyter Notebooks. These reports provide deeper insight into the datasets providing information such as missing data, mean, median, distribution, data counts and much more.
+* [Feature-engine](https://feature-engine.readthedocs.io/en/latest/)- A data engineering library with various transformer and feature selection methods for ML modelling. Some examples of its use in this project;  imputation of numerical and categorical data during data cleaning, categorical encoding to make data compatible for deeper data analysis, numerical transformation to normalise feature distribution during modelling, smart correlated selection step in ML pipeline creation and discretising data for the purpose of plotting data.
+* [Scikit-Learn](https://scikit-learn.org/)- A library which provides tools for data analytics. Scikit-Learn was used to create the pipeline,feature selection & splitting Train and Test sets. It is essential to the modelling stage as the algorithms tested on our data were imported from the library. sklearn methods were used to evaluate the performance algorithms and gridsearchcv was used during hyperparameter optimization in which the performance of different hyperparameters on given models were scored to test their efficiency in predictions. 
+* [XGBoost](https://xgboost.readthedocs.io/en/stable/)- A machine learning pipeline whih provides GradientBoosting methods. XGBRegressor was one of the algortihms tested druing pipeine optimization.
 * seaborn
 * matplotlib
 * ppscore
