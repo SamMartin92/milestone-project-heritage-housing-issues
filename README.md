@@ -261,7 +261,6 @@ web: sh setup.sh && streamlit run app.py
 ### Heroku
 
 * The App live link is: [https://heritage-housing-issues.herokuapp.com/](https://heritage-housing-issues.herokuapp.com/)
-* 
 * The project was deployed to Heroku using the following steps.
 
 1. Log in to Heroku and create an App
@@ -292,22 +291,16 @@ Below is a list of the main libraries used in the creation of this project. An e
 
 ## Credits 
 
-* In this section you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
-
 ### Content 
 
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+- Any custom functions taken and/or adapted from Code Institue lessons or other sources  has been noted in Markdown or comments in the code where applicable.
+- The template for this repository was created by Code institue
+- The dataset for this project was sourced from [Kaggle}(https://www.kaggle.com/codeinstitute/housing-prices-data)
 
 ### Media
 
-- The photos used on the home and sign up page are from This Open Source site
-- The images used for the gallery page were taken from this other open source site
-
-
-
+- The streamlit icon used for the dashboard was taken from 
+- 
 ## Acknowledgements (optional)
 * In case you would like to thank the people that provided support through this project.
 
