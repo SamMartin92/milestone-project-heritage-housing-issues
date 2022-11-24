@@ -299,7 +299,7 @@ Below is a list of the main libraries used in the creation of this project. An e
 
 ### Media
 
-- The streamlit icon used for the dashboard was taken from 
+- The streamlit icon used for the dashboard was taken from [Twemoji](https://twemoji.maxcdn.com/v/latest/preview-svg.html).
 - 
 ## Acknowledgements (optional)
 * In case you would like to thank the people that provided support through this project.
