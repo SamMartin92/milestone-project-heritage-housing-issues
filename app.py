@@ -12,9 +12,9 @@ app = MultiPage(app_name = "Heritage Housing Project")
 
 #add app pages
 # app.add_page("Project Summary", page_project_summary_body)
-app.add_page("Sale Price Correlation Study", page_correlation_study)
+# app.add_page("Sale Price Correlation Study", page_correlation_study)
 # app.add_page("Project Hypotheses", page_hyp_study_body)
-# app.add_page("ML Model", page_ml_model_body)
+app.add_page("ML Model", page_ml_model_body)
 # app.add_page("House Price Prediction", page_house_price_prediction_body)
 
 app.run()
