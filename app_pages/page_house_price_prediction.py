@@ -1,25 +1,28 @@
 import streamlit as st
 import pandas as pd
+import datetime
 from src.data_management.data import load_housing_data, load_inherited_houses_data, load_pkl_file
 from src.machine_learning.predict_sale_price_ui import predict_sale_price
 
 
 def page_house_price_prediction_body():
-    version = 'v1'
+    version = 'v2'
     df_inherited = load_inherited_houses_data()
-    pipeline_regressor = load_pkl_file("outputs/ml_pipeline/predict_saleprice/v1/pipeline_regressor.pkl")
+    pipeline_regressor = load_pkl_file(
+        f"outputs/ml_pipeline/predict_saleprice/{version}/pipeline_regressor.pkl")
     features = (pd.read_csv(f"outputs/ml_pipeline/predict_saleprice/{version}/X_train.csv")
-					.columns
-					.to_list()
-					)
+                .columns
+                .to_list()
+                )
 
-    
-    sale_price_prediction_1 = predict_sale_price(df_inherited.iloc[[0]], features, pipeline_regressor)
-    sale_price_prediction_2 = predict_sale_price(df_inherited.iloc[[1]], features, pipeline_regressor)
-    sale_price_prediction_3 = predict_sale_price(df_inherited.iloc[[2]], features, pipeline_regressor)
-    sale_price_prediction_4 = predict_sale_price(df_inherited.iloc[[3]], features, pipeline_regressor)
-    
-    
+    sale_price_prediction_1 = predict_sale_price(
+        df_inherited.iloc[[0]], features, pipeline_regressor)
+    sale_price_prediction_2 = predict_sale_price(
+        df_inherited.iloc[[1]], features, pipeline_regressor)
+    sale_price_prediction_3 = predict_sale_price(
+        df_inherited.iloc[[2]], features, pipeline_regressor)
+    sale_price_prediction_4 = predict_sale_price(
+        df_inherited.iloc[[3]], features, pipeline_regressor)
 
     st.write(" # Sale Price Prediction:")
 
@@ -29,9 +32,9 @@ def page_house_price_prediction_body():
         and would like to be able to predict the sale price of other homes in Ames, Iowa, should she wish 
          to buy there in the future.
         * Below are the features and predicted sales prices of her 4 inherited properties:
-        """ 
-        )
-    
+        """
+    )
+
     st.write(df_inherited)
 
     st.write(
@@ -52,63 +55,87 @@ def page_house_price_prediction_body():
     )
 
     X_live = DrawInputWidgets(version, features)
-    sale_price_prediction = predict_sale_price(X_live, features, pipeline_regressor)
+    sale_price_prediction = predict_sale_price(
+        X_live, features, pipeline_regressor)
 
     if st.button("Predict Sale Price"):
         st.write(
             f"${sale_price_prediction}"
         )
 
-       
+
 def DrawInputWidgets(version, features):
 
     df = load_housing_data()
 
     percentageMin, percentageMax = 0.4, 2.0
-    
-    col1, col2, col3, col4 = st.beta_columns(4)
+    year = datetime.date.today().strftime("%Y")
+
+    col1, col2, col3 = st.beta_columns(3)
+    col4, col5, col6 = st.beta_columns(3)
 
     X_live = pd.DataFrame([], index=[0])
+
 
     with col1:
         feature = features[0]
         st_widget = st.number_input(
-            label = feature,
-            min_value= df[feature].min()*percentageMin,
-			max_value= df[feature].max()*percentageMax,
-			value= df[feature].median()
+            label=feature,
+            min_value=df[feature].min()*percentageMin,
+            max_value=df[feature].max()*percentageMax,
+            value=df[feature].median()
         )
     X_live[feature] = st_widget
 
     with col2:
         feature = features[1]
         st_widget = st.number_input(
-            label = feature,
-            min_value= df[feature].min()*percentageMin,
-			max_value= df[feature].max()*percentageMax,
-			value= df[feature].median()
+            label=feature,
+            min_value=df[feature].min()*percentageMin,
+            max_value=df[feature].max()*percentageMax,
+            value=df[feature].median()
         )
     X_live[feature] = st_widget
 
     with col3:
         feature = features[2]
         st_widget = st.number_input(
-            label = feature,
-            min_value= df[feature].min()*percentageMin,
-			max_value= df[feature].max()*percentageMax,
-			value= df[feature].median()
+            label=feature,
+            min_value=df[feature].min(),
+            max_value=df[feature].max(),
+            value=int(df[feature].median())
         )
     X_live[feature] = st_widget
 
     with col4:
         feature = features[3]
         st_widget = st.number_input(
-            label = feature,
-            min_value= df[feature].min()*percentageMin,
-			max_value= df[feature].max()*percentageMax,
-			value= df[feature].median()
+            label=feature,
+            min_value=df[feature].min()*percentageMin,
+            max_value=df[feature].max()*percentageMax,
+            value=df[feature].median()
         )
     X_live[feature] = st_widget
 
-    return X_live
+    with col5:
+        feature = features[4]
+        st_widget = st.number_input(
+            label=feature,
+            min_value=int(df[feature].min()*percentageMin),
+            max_value=int(year),
+            value=int(df[feature].median())
+        )
+    X_live[feature] = st_widget
 
+    with col6:
+        feature = features[5]
+        st_widget = st.number_input(
+            label=feature,
+            min_value=int(df[feature].min()*percentageMin),
+            max_value=int(year),
+            value=int(df[feature].median())
+        )
+    X_live[feature] = st_widget
+
+
+    return X_live
