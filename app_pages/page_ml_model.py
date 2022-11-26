@@ -8,7 +8,7 @@ from src.machine_learning.evaluate_regressor import regression_performance, regr
 def page_ml_model_body():
     
     # load files
-    version = 'v2'
+    version = st.selectbox('', ('v2','v1'))
     pipeline_regressor = load_pkl_file(f"outputs/ml_pipeline/predict_saleprice/{version}/pipeline_regressor.pkl")
     feat_importance_plot = plt.imread(f"outputs/ml_pipeline/predict_saleprice/{version}/features_importance.png")
     X_train = pd.read_csv(f"outputs/ml_pipeline/predict_saleprice/{version}/X_train.csv")
@@ -20,6 +20,7 @@ def page_ml_model_body():
 
 
     st.write(" ## **ML Pipeline: Predict Sale Price**")
+    st.write(f"> Currently viewing pipeline version: {version}")
 
     st.info(
             f"* An ML pipeline was developed to answer our client's second business requirement "
@@ -30,8 +31,8 @@ def page_ml_model_body():
             f"This meets our business requirement.\n"
             f"* Further data cleaning and feature engineering steps have taken place attempting to tune the model to higher score"
             f" and the current version: **'{version}'** delivers an R2 score of:\n"
-            f"  * {r2_train_score} on TrainSet\n"
-            f"  * {r2_test_score} on TestSet\n"
+            f"  * **{r2_train_score}** on TrainSet\n"
+            f"  * **{r2_test_score}** on TestSet\n"
         
     )
 
