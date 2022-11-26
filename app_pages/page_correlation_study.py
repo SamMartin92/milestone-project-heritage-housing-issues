@@ -3,10 +3,12 @@ from feature_engine.discretisation import EqualFrequencyDiscretiser
 from feature_engine.imputation import CategoricalImputer
 import streamlit as st
 import numpy as np
-from src.data_management.data import load_housing_data
 import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_style("whitegrid")
+
+# load data management function
+from src.data_management.data import load_housing_data
 
 
 def page_correlation_study():
@@ -19,37 +21,58 @@ def page_correlation_study():
     df_corr_pearson, df_corr_spearman, pps_matrix = calculate_corr_and_pps(df)
 
     cols_and_conclusions = {
-        '1stFlrSF': 'Houses with high Sales Prices tend to have first floors with at least 1500 square feet.',
-        'GarageArea': 'Houses with low Sales Prices tend to have no garage and those with a garage of at least 600 square feet tend to have high Sales Prices.',
-        'GrLivArea': 'Houses with high sales prices tend to have above grade living area of at least 1500 square feet. Those with low sales prices tend to have 1000 square feet or less.',
-        'OverallQual': 'Houses with high Sales prices tend to have at least a Very Good Overall Quality Rating.',
-        'TotalBsmtSF': 'Houses with high Sales Prices tend to have basements with at a square footage of at least 1200. Houses with no basements or basements with less than 1000 square feet tend to have low Sales prices.',
-        'YearBuilt': 'Houses do not tend to have a high Sales Price if built before 1990.'}
+        '1stFlrSF':
+            'Houses with high Sales Prices tend to have first floors' +
+            'with at least 1500 square feet.',
+        'GarageArea':
+            'Houses with low Sales Prices tend to have no garage and those' +
+            ' with a garage of at least 600 square feet tend to have high ' +
+            'Sales Prices.',
+        'GrLivArea': 'Houses with high sales prices tend to have above ' +
+        'grade living area of at least 1500 square feet. Those with low sales' +
+        'prices tend to have 1000 square feet or less.',
+        'OverallQual':
+            'Houses with high Sales prices tend to have at least a Very Good' +
+            ' Overall Quality Rating.',
+        'TotalBsmtSF':
+            'Houses with high Sales Prices tend to have basements with at a ' +
+            'square footage of at least 1200. Houses with no basements or ' +
+            'basements with less than 1000 square feet tend to have low ' +
+            'Sales prices.',
+        'YearBuilt':
+            'Houses do not tend to have a high Sales Price if built before' +
+            ' 1990.'
+    }
 
     conclusions = print_conclusions(cols_and_conclusions)
 
     st.write("## Sale Price Correlation Study")
     st.info(
         """
-        * Our client wishes to know how certain attributes correlate with the final sale price of a property.\n
-        * The dataset is available to view below and we have chosen the most important features relevant to sale
-         price further below.
+        * Our client wishes to know how certain attributes correlate with the
+        final sale price of a property.\n
+        * The dataset is available to view below and we have chosen the most
+        important features relevant to sale price further below.
         """
     )
 
     if st.checkbox("House Price Data"):
         st.write(
             "* Below is the raw uncleaned dataset for our study.\n"
-            f" * This dataset has {df.shape[0]} rows representing {df.shape[0]} properties.\n"
-            f" * This dataset has {df.shape[1]} columns representing {df.shape[1]} different house attributes.\n\n"
+            f" * This dataset has {df.shape[0]} rows representing " +
+            "{df.shape[0]} properties.\n"
+            f" * This dataset has {df.shape[1]} columns " +
+            f"representing {df.shape[1]} different house attributes."
+            "\n\n"
             "A sample of the first 10 rows can be seen below.")
 
         st.write(df.head(10))
 
     st.info(
         """
-        * A correlation study was run in our SalePriceStudy notebook and it was found that
-        the variables most closely correlated with the sale price of a house were as follows:\n
+        * A correlation study was run in our SalePriceStudy notebook
+        and it was found that the variables most closely correlated
+        with the sale price of a house were as follows:\n
         """
         f"* {', '.join(list(cols_and_conclusions.keys()))}"
 
@@ -57,11 +80,15 @@ def page_correlation_study():
 
     st.write(
         """
-        * Insight into these attributes and their values plotted against sales prices can be seen below.
-            * Each conclusion below maps to respective plots which can be chosen by selecting the feature
+        * Insight into these attributes and their values plotted
+        against sales prices can be seen below.
+            * Each conclusion below maps to respective plots which
+            can be chosen by selecting the feature
             from the drop down menu.
-            * All sale prices have been sorted into 6 ranges for a more general representation of the type
-             of sale price one might expect for a property with a given attribute.
+            * All sale prices have been sorted into 6 ranges for a
+            more general representation of the type
+             of sale price one might expect for a property with a
+             given attribute.
         """
     )
 
@@ -73,11 +100,14 @@ def page_correlation_study():
     load_plots_and_conclusions(df, cols_and_conclusions, plot_numerical)
 
     st.info("""
-        * During feature engineering, heatmaps were produced to study the correlation levels and PPS
+        * During feature engineering, heatmaps were produced to study
+        the correlation levels and PPS
         between all variables in our dataset.
-        * Heatmaps are available to view below showing only variables whose correlation levels (Pearson &
+        * Heatmaps are available to view below showing only variables
+        whose correlation levels (Pearson &
         Spearman) are greater than 0.4
-        * Below these, there is the option to view a heatmap displaying PPS between all
+        * Below these, there is the option to view a heatmap displaying
+        PPS between all
         features, displaying those greater than 0.2.
         """)
 
