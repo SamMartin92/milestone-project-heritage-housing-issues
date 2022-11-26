@@ -6,6 +6,11 @@ from src.machine_learning.predict_sale_price_ui import predict_sale_price
 
 
 def page_house_price_prediction_body():
+    """
+    Function to loads variable for &
+    runs all elements in house price
+    prediction dashboard page.
+    """
     version = 'v2'
     df_inherited = load_inherited_houses_data()
     pipeline_regressor = load_pkl_file(
@@ -29,7 +34,7 @@ def page_house_price_prediction_body():
     st.info(
         """
         * Our client is interested in predicting the potential sale price of her four inherited properties
-        and would like to be able to predict the sale price of other homes in Ames, Iowa, should she wish 
+        and would like to be able to predict the sale price of other homes in Ames, Iowa, should she wish
          to buy there in the future.
         * Below are the features and predicted sales prices of her 4 inherited properties:
         """
@@ -49,7 +54,7 @@ def page_house_price_prediction_body():
 
     st.info(
         """
-        * With the below interface, the client can predict the sale price of any home in Ames, Iowa by inputting the 
+        * With the below interface, the client can predict the sale price of any home in Ames, Iowa by inputting the
         the relevant values and running predictive analysis by clicking the 'Predict Sale Price' button.
         """
     )
@@ -65,7 +70,9 @@ def page_house_price_prediction_body():
 
 
 def DrawInputWidgets(version, features):
-
+    """
+    Generates feature columns for house price predictor functionality
+    """
     df = load_housing_data()
 
     percentageMin, percentageMax = 0.4, 2.0
@@ -76,13 +83,12 @@ def DrawInputWidgets(version, features):
 
     X_live = pd.DataFrame([], index=[0])
 
-
     with col1:
         feature = features[0]
         st_widget = st.number_input(
             label=feature,
-            min_value=df[feature].min()*percentageMin,
-            max_value=df[feature].max()*percentageMax,
+            min_value=df[feature].min() * percentageMin,
+            max_value=df[feature].max() * percentageMax,
             value=df[feature].median()
         )
     X_live[feature] = st_widget
@@ -91,8 +97,8 @@ def DrawInputWidgets(version, features):
         feature = features[1]
         st_widget = st.number_input(
             label=feature,
-            min_value=df[feature].min()*percentageMin,
-            max_value=df[feature].max()*percentageMax,
+            min_value=df[feature].min() * percentageMin,
+            max_value=df[feature].max() * percentageMax,
             value=df[feature].median()
         )
     X_live[feature] = st_widget
@@ -111,8 +117,8 @@ def DrawInputWidgets(version, features):
         feature = features[3]
         st_widget = st.number_input(
             label=feature,
-            min_value=df[feature].min()*percentageMin,
-            max_value=df[feature].max()*percentageMax,
+            min_value=df[feature].min() * percentageMin,
+            max_value=df[feature].max() * percentageMax,
             value=df[feature].median()
         )
     X_live[feature] = st_widget
@@ -121,7 +127,7 @@ def DrawInputWidgets(version, features):
         feature = features[4]
         st_widget = st.number_input(
             label=feature,
-            min_value=int(df[feature].min()*percentageMin),
+            min_value=int(df[feature].min() * percentageMin),
             max_value=int(year),
             value=int(df[feature].median())
         )
@@ -131,11 +137,10 @@ def DrawInputWidgets(version, features):
         feature = features[5]
         st_widget = st.number_input(
             label=feature,
-            min_value=int(df[feature].min()*percentageMin),
+            min_value=int(df[feature].min() * percentageMin),
             max_value=int(year),
             value=int(df[feature].median())
         )
     X_live[feature] = st_widget
-
 
     return X_live

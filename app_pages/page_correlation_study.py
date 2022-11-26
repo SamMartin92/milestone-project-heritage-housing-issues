@@ -10,7 +10,10 @@ sns.set_style("whitegrid")
 
 
 def page_correlation_study():
-
+    """
+    Function to run all elements in correlation
+    dashboard page.
+    """
     df = load_housing_data()
 
     df_corr_pearson, df_corr_spearman, pps_matrix = calculate_corr_and_pps(df)
@@ -21,8 +24,7 @@ def page_correlation_study():
         'GrLivArea': 'Houses with high sales prices tend to have above grade living area of at least 1500 square feet. Those with low sales prices tend to have 1000 square feet or less.',
         'OverallQual': 'Houses with high Sales prices tend to have at least a Very Good Overall Quality Rating.',
         'TotalBsmtSF': 'Houses with high Sales Prices tend to have basements with at a square footage of at least 1200. Houses with no basements or basements with less than 1000 square feet tend to have low Sales prices.',
-        'YearBuilt': 'Houses do not tend to have a high Sales Price if built before 1990.'
-    }
+        'YearBuilt': 'Houses do not tend to have a high Sales Price if built before 1990.'}
 
     conclusions = print_conclusions(cols_and_conclusions)
 
@@ -40,14 +42,13 @@ def page_correlation_study():
             "* Below is the raw uncleaned dataset for our study.\n"
             f" * This dataset has {df.shape[0]} rows representing {df.shape[0]} properties.\n"
             f" * This dataset has {df.shape[1]} columns representing {df.shape[1]} different house attributes.\n\n"
-            "A sample of the first 10 rows can be seen below."
-        )
+            "A sample of the first 10 rows can be seen below.")
 
         st.write(df.head(10))
 
     st.info(
         """
-        * A correlation study was run in our SalePriceStudy notebook and it was found that 
+        * A correlation study was run in our SalePriceStudy notebook and it was found that
         the variables most closely correlated with the sale price of a house were as follows:\n
         """
         f"* {', '.join(list(cols_and_conclusions.keys()))}"
@@ -57,7 +58,7 @@ def page_correlation_study():
     st.write(
         """
         * Insight into these attributes and their values plotted against sales prices can be seen below.
-            * Each conclusion below maps to respective plots which can be chosen by selecting the feature 
+            * Each conclusion below maps to respective plots which can be chosen by selecting the feature
             from the drop down menu.
             * All sale prices have been sorted into 6 ranges for a more general representation of the type
              of sale price one might expect for a property with a given attribute.
@@ -72,7 +73,7 @@ def page_correlation_study():
     load_plots_and_conclusions(df, cols_and_conclusions, plot_numerical)
 
     st.info("""
-        * During feature engineering, heatmaps were produced to study the correlation levels and PPS 
+        * During feature engineering, heatmaps were produced to study the correlation levels and PPS
         between all variables in our dataset.
         * Heatmaps are available to view below showing only variables whose correlation levels (Pearson &
         Spearman) are greater than 0.4
@@ -94,6 +95,10 @@ def page_correlation_study():
 
 
 def load_plots_and_conclusions(df, cols_and_conclusions, plot_numerical):
+    """
+    Displays the conclusions and loads their associated
+    plots to dashboard page
+    """
     df_disc, hue_order = sale_price_discretisation(df)
     variables = list(cols_and_conclusions.keys())
 
@@ -111,6 +116,10 @@ def load_plots_and_conclusions(df, cols_and_conclusions, plot_numerical):
 
 
 def print_conclusions(cols_and_conclusions):
+    """
+    Returns conclusions in bullet point form
+    to present in dashboard page
+    """
     conclusions = ""
     for conclusion in list(cols_and_conclusions.values()):
         conclusions += f"* {conclusion}\n"
@@ -119,6 +128,10 @@ def print_conclusions(cols_and_conclusions):
 
 
 def plot_numerical(df, col, target_var, hue_order):
+    """
+    Generates histograms to plot numerical variables
+    against SalePrice
+    """
     fig, axes = plt.subplots(figsize=(8, 5))
     sns.histplot(data=df, x=col, hue=target_var,
                  hue_order=hue_order, kde=True, element="step")
@@ -127,6 +140,10 @@ def plot_numerical(df, col, target_var, hue_order):
 
 
 def plot_line(df, col, target_var):
+    """
+    Generates line graphs to plot numerical variables
+    against SalePrice
+    """
     fig, axes = plt.subplots(figsize=(8, 5))
     sns.lineplot(data=df, x=target_var, y=col, color='#FC6C85')
     plt.title(f"{col}", fontsize=20, y=1.05)
@@ -142,7 +159,7 @@ def sale_price_discretisation(df):
 
     # maps quantile values to 'SalePrice'
     labels = discretiser.binner_dict_['SalePrice']
-    q_value = len(labels)-1
+    q_value = len(labels) - 1
     labels_map = {}
 
     for x in range(0, q_value):
@@ -178,10 +195,18 @@ def heatmap_corr(df, threshold, figsize=(20, 14), font_annot=14):
         mask[abs(df) < threshold] = True
 
         fig, axes = plt.subplots(figsize=figsize)
-        sns.heatmap(df, annot=True, xticklabels=True, yticklabels=True,
-                    mask=mask, cmap='viridis', annot_kws={"size": font_annot}, ax=axes,
-                    linewidth=0.5,
-                    )
+        sns.heatmap(
+            df,
+            annot=True,
+            xticklabels=True,
+            yticklabels=True,
+            mask=mask,
+            cmap='viridis',
+            annot_kws={
+                "size": font_annot},
+            ax=axes,
+            linewidth=0.5,
+        )
         axes.set_yticklabels(df.columns, rotation=0, fontsize=20)
         axes.set_xticklabels(df.columns, fontsize=20)
         plt.ylim(len(df.columns), 0)
@@ -195,9 +220,17 @@ def heatmap_pps(df, threshold, figsize=(20, 12), font_annot=8):
         mask[abs(df) < threshold] = True
 
         fig, ax = plt.subplots(figsize=figsize)
-        ax = sns.heatmap(df, annot=True, xticklabels=True, yticklabels=True,
-                         mask=mask, cmap='rocket_r', annot_kws={"size": font_annot},
-                         linewidth=0.05, linecolor='grey')
+        ax = sns.heatmap(
+            df,
+            annot=True,
+            xticklabels=True,
+            yticklabels=True,
+            mask=mask,
+            cmap='rocket_r',
+            annot_kws={
+                "size": font_annot},
+            linewidth=0.05,
+            linecolor='grey')
         ax.set_yticklabels(df.columns, rotation=0, fontsize=20)
         ax.set_xticklabels(df.columns, fontsize=20)
 

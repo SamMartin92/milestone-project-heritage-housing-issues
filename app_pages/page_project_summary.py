@@ -2,6 +2,10 @@ import streamlit as st
 
 
 def page_project_summary_body():
+    """
+    Function which displays elements
+    of project summary page
+    """
 
     st.write("# Project Summary")
 
@@ -12,8 +16,7 @@ def page_project_summary_body():
         "\n Lydia wishes to maximise the sales price of her inherited properties, but also predict the sale price of any property in Ames, Iwoa, should she wish to purchase their in the future. For this reason, she also wishes to know what features contribute most closely with a properties sale price. She has requested graphical representations to better understand.\n"
         "\n Therefore, this project has 2 business requirements:\n"
         "\n 1. The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualizations of the correlated variables against the sale price to show that.\n"
-        "\n 2. The client is interested in predicting the house sales price from her four inherited houses, and any other house in Ames, Iowa."
-    )
+        "\n 2. The client is interested in predicting the house sales price from her four inherited houses, and any other house in Ames, Iowa.")
 
     st.write(
         f"* For additional information, please visit and **read** the "
@@ -24,13 +27,12 @@ def page_project_summary_body():
         "* We have located and chosen a publicly available dataset of properties sold in Ames, Iowa. It has information on 24 seperate features per property and we use it to fit our ML model to predict sale prices and to study which features correlate to the sale price most closley."
         "\n* 'SalePrice' will be our focus in this project and represents the price the property was sold for in USD in our dataset."
         "\n* It is our **target** variable, that is, it will be the value we wish to predict using the features provided to us from Lydia's inherited properties."
-        "\n* Our dataset has been retrieved from the following [location](https://www.kaggle.com/datasets/codeinstitute/housing-prices-data). Information on each feature can be seen below:"
-    )
-
+        "\n* Our dataset has been retrieved from the following [location](https://www.kaggle.com/datasets/codeinstitute/housing-prices-data). Information on each feature can be seen below:")
 
     st.markdown(html_string, unsafe_allow_html=True)
 
 
+# table display of dataset variables
 html_string = """<details>
                 <summary>Housing price Data</summary>
                 <br>
