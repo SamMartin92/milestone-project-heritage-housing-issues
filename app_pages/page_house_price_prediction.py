@@ -59,8 +59,8 @@ def page_house_price_prediction_body():
         X_live, features, pipeline_regressor)
 
     if st.button("Predict Sale Price"):
-        st.write(
-            f"${sale_price_prediction}"
+        st.success(
+            f"* A house with these attributes has an estimated sale price of **${sale_price_prediction}**."
         )
 
 
