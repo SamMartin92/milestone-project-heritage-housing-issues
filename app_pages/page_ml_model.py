@@ -2,7 +2,11 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 from src.data_management.data import load_pkl_file
-from src.machine_learning.evaluate_regressor import regression_performance, regression_evaluation_plots, curr_version_r2_score
+from src.machine_learning.evaluate_regressor import (
+    regression_performance,
+    regression_evaluation_plots,
+    curr_version_r2_score
+)
 
 
 def page_ml_model_body():
@@ -14,9 +18,11 @@ def page_ml_model_body():
     # load files
     version = st.selectbox('', ('v2', 'v1'))
     pipeline_regressor = load_pkl_file(
-        f"outputs/ml_pipeline/predict_saleprice/{version}/pipeline_regressor.pkl")
+        f"outputs/ml_pipeline/predict_saleprice/{version}/" +
+        "pipeline_regressor.pkl")
     feat_importance_plot = plt.imread(
-        f"outputs/ml_pipeline/predict_saleprice/{version}/features_importance.png")
+        f"outputs/ml_pipeline/predict_saleprice/{version}/" +
+        "features_importance.png")
     X_train = pd.read_csv(
         f"outputs/ml_pipeline/predict_saleprice/{version}/X_train.csv")
     X_test = pd.read_csv(
@@ -33,13 +39,17 @@ def page_ml_model_body():
     st.write(f"> Currently viewing pipeline version: {version}")
 
     st.info(
-        f"* An ML pipeline was developed to answer our client's second business requirement "
-        f"of *'predicting the sale price from any house in Ames, Iowa in case of future property ownership in that area.'*\n"
-        f"* It was decided a regressor model would be the most suitable model to predict sale price to our project requirement: "
+        f"* An ML pipeline was developed to answer our client's second "
+        f"business requirement of *'predicting the sale price from any house" +
+        f"in Ames, Iowa in case of future property ownership in that area.'*\n"
+        f"* It was decided a regressor model would be the most suitable " +
+        "model  to predict sale price to our project requirement: "
         f"**An R2 score > 0.75** on train and test sets.\n"
-        f"* Version 1 of this pipeline delivered an R2 score of **0.885** & **0.782** on our train and test sets respectively. "
+        f"* Version 1 of this pipeline delivered an R2 score of **0.885** & " +
+        f"**0.782** on our train and test sets respectively. "
         f"This meets our business requirement.\n"
-        f"* Further data cleaning and feature engineering steps have taken place attempting to tune the model to higher score"
+        f"* Further data cleaning and feature engineering steps have taken " +
+        f"place attempting to tune the model to higher score"
         f" and the current version: **'{version}'** delivers an R2 score of:\n"
         f"  * **{r2_train_score}** on TrainSet\n"
         f"  * **{r2_test_score}** on TestSet\n")
@@ -51,7 +61,8 @@ def page_ml_model_body():
         """
             ### Feature importance
 
-            * Below are the features the current model was trained on and their importance:
+            * Below are the features the current model was trained on and their
+            importance:
         """)
 
     st.write(list(X_train.columns))
