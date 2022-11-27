@@ -213,6 +213,7 @@ Although your friend has an excellent understanding of property prices in her ow
       
  4. Page 4: ML Model
     * This page displays the current iteration of the ML pipeline and will be of interest to technical users.
+    * There is the option provided with a selectbox to view orevious iterations of the pipeline also.
     * The ML pipeline is displayed, including the features used to fit the model and their importance, are displayed.
     * The performance of the current iteration, and whether it meets the performace criteria, is stated.
     * The regression plots for both the Train & Test Set are presented to the user.
@@ -293,14 +294,16 @@ Below is a list of the main libraries used in the creation of this project. An e
 
 ### Content 
 
-- Any custom functions taken and/or adapted from Code Institue lessons or other sources  has been noted in Markdown or comments in the code where applicable.
-- The template for this repository was created by Code institue
-- The dataset for this project was sourced from [Kaggle}(https://www.kaggle.com/codeinstitute/housing-prices-data)
+- Any custom functions taken and/or adapted from Code Institue lessons or other sources has been noted in Markdown or comments in the code where applicable.
+- The template for this repository was created by Code institue.
+- The idea for this project was presented in the CI lessons.
+- The dataset for this project was sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data)
 
 ### Media
 
 - The streamlit icon used for the dashboard was taken from [Twemoji](https://twemoji.maxcdn.com/v/latest/preview-svg.html).
 - 
-## Acknowledgements (optional)
-* In case you would like to thank the people that provided support through this project.
+## Acknowledgements:
+* Thank you to Neil McEwan and fellow students in the CI slack channel for this module for the assistance with queries throughout this project.
+* Thank you to my mentor Mo Shami for his helpful advice.
 
