@@ -229,7 +229,9 @@ Although your friend has an excellent understanding of property prices in her ow
 
 
 ## Unfixed Bugs
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+* There are no unfixed bugs to my knowledge in this project, however, when running HyperparameterOptization() using GridSearchCv from feature engine, a future warning is thrown: `/workspace/.pip-modules/lib/python3.8/site-packages/feature_engine/selection/smart_correlation_selection.py:271: FutureWarning: Passing a set as an indexer is deprecated and will raise in a future version. Use a list instead.
+  f = X[feature_group].std().sort_values(ascending=False).index[0]`
+* I believe this is a pandas future warning and is caused by the Feature-engine library so have been unable to correct it. It causes no issue but prints out a warning for each fit in HyperparameterOptimization().
 
 ## Deployment
 * This site was developed in [Gitpod](https://www.gitpod.io/) and deployed to [Heroku](https://www.heroku.com/).
