@@ -213,6 +213,7 @@ Although your friend has an excellent understanding of property prices in her ow
       
  4. Page 4: ML Model
     * This page displays the current iteration of the ML pipeline and will be of interest to technical users.
+    * There is the option provided with a selectbox to view orevious iterations of the pipeline also.
     * The ML pipeline is displayed, including the features used to fit the model and their importance, are displayed.
     * The performance of the current iteration, and whether it meets the performace criteria, is stated.
     * The regression plots for both the Train & Test Set are presented to the user.
@@ -228,7 +229,9 @@ Although your friend has an excellent understanding of property prices in her ow
 
 
 ## Unfixed Bugs
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+* There are no unfixed bugs to my knowledge in this project, however, when running HyperparameterOptization() using GridSearchCv from feature engine, a future warning is thrown: `/workspace/.pip-modules/lib/python3.8/site-packages/feature_engine/selection/smart_correlation_selection.py:271: FutureWarning: Passing a set as an indexer is deprecated and will raise in a future version. Use a list instead.
+  f = X[feature_group].std().sort_values(ascending=False).index[0]`
+* I believe this is a pandas future warning and is caused by the Feature-engine library so have been unable to correct it. It causes no issue but prints out a warning for each fit in HyperparameterOptimization().
 
 ## Deployment
 * This site was developed in [Gitpod](https://www.gitpod.io/) and deployed to [Heroku](https://www.heroku.com/).
@@ -293,14 +296,16 @@ Below is a list of the main libraries used in the creation of this project. An e
 
 ### Content 
 
-- Any custom functions taken and/or adapted from Code Institue lessons or other sources  has been noted in Markdown or comments in the code where applicable.
-- The template for this repository was created by Code institue
-- The dataset for this project was sourced from [Kaggle}(https://www.kaggle.com/codeinstitute/housing-prices-data)
+- Any custom functions taken and/or adapted from Code Institue lessons or other sources has been noted in Markdown or comments in the code where applicable.
+- The template for this repository was created by Code institue.
+- The idea for this project was presented in the CI lessons.
+- The dataset for this project was sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data)
 
 ### Media
 
 - The streamlit icon used for the dashboard was taken from [Twemoji](https://twemoji.maxcdn.com/v/latest/preview-svg.html).
 - 
-## Acknowledgements (optional)
-* In case you would like to thank the people that provided support through this project.
+## Acknowledgements:
+* Thank you to Neil McEwan and fellow students in the CI slack channel for this module for the assistance with queries throughout this project.
+* Thank you to my mentor Mo Shami for his helpful advice.
 
