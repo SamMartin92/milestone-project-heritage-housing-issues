@@ -143,6 +143,10 @@ Although your friend has an excellent understanding of property prices in her ow
     * Bus Requirment: BR1 & BR2
     * Action Required: Deploy site on heroku
       * Satisfied: Dashboard 
+  * **As a data practioner** I want a live site on which to host the project **so that** I can release new pipeline iterations when developed
+    * Bus Requirment: BR2
+    * Action Required: Redeploy up to date commits to Heroku
+      * Satisfied: Dashboard 
 
 ## Rationale to map the business requirements to the Data Visualizations and ML tasks
 * Business Requirement 1: Correlation Study and Data Visualisation
@@ -226,7 +230,11 @@ Although your friend has an excellent understanding of property prices in her ow
     * There are input widgets which will take values for the house attributes on which the model was trained.
         * A user can enter attributes for a specific property into the inputs and using the 'Predict Sale Price' button, can run the values through the ML model and output a predicted sale price for a house with those features.
 
-
+## Hyperparameters
+* The most up to date iteration of the pipeline contains ExtraTreesRegressor as the ML model.
+* During modelling, hyperparameter optimisation was carried out in order to improve the model efficiency.
+* The choice of which hyperparameters to use in this process was decided by studying the [ExtraTrees Regressor docs](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html) and choosing from the optional algorithm parameters.
+* The ranges of values chosen to run through the hyperparameter optimisation process was decided upon by choosing from the ranges specified in the docs and zoning in on the most efficient parameter value ranges through multiple uses of the HyperparameterOptization() class contained in the notebook.
 
 ## Unfixed Bugs
 * There are no unfixed bugs to my knowledge in this project, however, when running HyperparameterOptization() using GridSearchCv from feature engine, a future warning is thrown: `/workspace/.pip-modules/lib/python3.8/site-packages/feature_engine/selection/smart_correlation_selection.py:271: FutureWarning: Passing a set as an indexer is deprecated and will raise in a future version. Use a list instead.
