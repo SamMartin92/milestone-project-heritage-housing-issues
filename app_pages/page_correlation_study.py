@@ -83,7 +83,7 @@ def page_correlation_study():
         " against sales prices can be seen below.\n"
         "    * The conclusions below have been derived from the"
         " study of each histogram with a more detailed confirmation"
-        "of each conclusion provided by associated lineplot.\n"
+        " of each conclusion provided by associated lineplot.\n"
         "    * Each conclusion below maps to respective plots which"
         " can be chosen by selecting the feature from the drop down"
         " menu.\n"
