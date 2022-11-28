@@ -23,7 +23,7 @@ def page_correlation_study():
     cols_and_conclusions = {
         '1stFlrSF':
             'Houses with high Sales Prices tend to have first floors' +
-            'with at least 1500 square feet.',
+            ' with at least 1500 square feet.',
         'GarageArea':
             'Houses with low Sales Prices tend to have no garage and those' +
             ' with a garage of at least 600 square feet tend to have high ' +
@@ -80,7 +80,10 @@ def page_correlation_study():
 
     st.write(
         "* Insight into these attributes and their values plotted"
-        "against sales prices can be seen below.\n"
+        " against sales prices can be seen below.\n"
+        "    * The conclusions below have been derived from the"
+        " study of each histogram with a more detailed confirmation"
+        "of each conclusion provided by associated lineplot.\n"
         "    * Each conclusion below maps to respective plots which"
         " can be chosen by selecting the feature from the drop down"
         " menu.\n"
