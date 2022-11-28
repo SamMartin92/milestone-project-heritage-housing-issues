@@ -7,31 +7,30 @@ def page_project_summary_body():
     of project summary page
     """
 
-    st.write("# Project Summary")
+    st.write("## Project Summary")
 
     st.success(
-        """
-        ## **Project Inception:**\n
-        Our client Lydia Doe has inherited four properties in  Ames, Iowa, USA.
-        Lydia, a resident of Belgium, has limited knowledge of house prices
-        outside of her home country and wishes to gain more insight into the
-        Iowan property market so she may more accurately judge the value of her
-        inheritance.\n
-        \n Lydia wishes to maximise the sales price of her inherited
-        properties, but also predict the sale price of any property in Ames,
-        Iwoa, should she wish to purchase their in the future. For this reason,
-        she also wishes to know what features contribute most closely with a
-        properties sale price. She has requested graphical representations to
-        better understand.\n
-        \n Therefore, this project has 2 business requirements:\n
-        \n 1. The client is interested in discovering how the house attributes
-        correlate with the sale price. Therefore, the client expects data
-        visualizations of the correlated variables against the sale price to
-        show that.\n
-        \n 2. The client is interested in predicting the house sales price from
-        her four inherited houses, and any other house in Ames, Iowa.
-        """
-        )
+            "## **Project Inception:**\n"
+            "Our client Lydia Doe has inherited four properties in  Ames, Iowa"
+            ", USA. Lydia, a resident of Belgium, has limited knowledge of "
+            "house prices outside of her home country and wishes to gain more "
+            "insight into the Iowan property market so she may more accurately"
+            " judge the value of her inheritance.\n"
+            "\n Lydia wishes to maximise the sales price of her inherited"
+            "properties, but also predict the sale price of any property in "
+            "Ames, Iwoa, should she wish to purchase their in the future. "
+            "For this reason, she also wishes to know what features contribute"
+            " most closely with a property's sale price. She has requested "
+            "graphical representations to better understand.\n"
+            "\n Therefore, this project has 2 business requirements:\n"
+            "\n 1. The client is interested in discovering how the house "
+            "attributes correlate with the sale price. Therefore, the client "
+            "expects data visualizations of the correlated variables against "
+            "the sale price to show that.\n"
+            "\n 2. The client is interested in predicting the house sales "
+            "price from her four inherited houses, and any other house in Ames"
+            ", Iowa."
+            )
 
     st.write(
         f"* For additional information, please visit and **read** the "
@@ -40,16 +39,16 @@ def page_project_summary_body():
 
     st.info(
         "## **Project Dataset:**\n"
-        f"* We have located and chosen a publicly available dataset of" +
-        f"properties sold in Ames, Iowa. It has information on 24 seperate" +
+        f"* We have located and chosen a publicly available dataset of " +
+        f"properties sold in Ames, Iowa. It has information on 24 seperate " +
         f"features per property and we use it to fit our ML model to predict" +
-        f"sale prices and to study which features correlate to the sale " +
+        f" sale prices and to study which features correlate to the sale " +
         f"price most closley."
         f"\n* 'SalePrice' will be our focus in this project and represents" +
-        f" theprice the property was sold for in USD in our dataset."
+        f" the price the property was sold for in USD in our dataset."
         f"\n* It is our **target** variable, that is, it will be the value" +
-        f" wewish to predict using the features provided to us from Lydia's" +
-        f"inherited properties."
+        f" we wish to predict using the features provided to us from Lydia's" +
+        f" inherited properties."
         f"\n* Our dataset has been retrieved from the following " +
         f"[location](https://www.kaggle.com/datasets/codeinstitute/" +
         f"housing-prices-data). Information on each feature can be seen "

@@ -60,7 +60,7 @@ def page_correlation_study():
         st.write(
             "* Below is the raw uncleaned dataset for our study.\n"
             f" * This dataset has {df.shape[0]} rows representing " +
-            "{df.shape[0]} properties.\n"
+            f"{df.shape[0]} properties.\n"
             f" * This dataset has {df.shape[1]} columns " +
             f"representing {df.shape[1]} different house attributes."
             "\n\n"
@@ -79,17 +79,15 @@ def page_correlation_study():
     )
 
     st.write(
-        """
-        * Insight into these attributes and their values plotted
-        against sales prices can be seen below.
-            * Each conclusion below maps to respective plots which
-            can be chosen by selecting the feature
-            from the drop down menu.
-            * All sale prices have been sorted into 6 ranges for a
-            more general representation of the type
-             of sale price one might expect for a property with a
-             given attribute.
-        """
+        "* Insight into these attributes and their values plotted"
+        "against sales prices can be seen below.\n"
+        "    * Each conclusion below maps to respective plots which"
+        " can be chosen by selecting the feature from the drop down"
+        " menu.\n"
+        "    * All sale prices have been sorted into 6 ranges for a"
+        " more general representation of the type of sale price one"
+        " might expect for a property with a given attribute when"
+        " viewing the histograms."
     )
 
     st.success(

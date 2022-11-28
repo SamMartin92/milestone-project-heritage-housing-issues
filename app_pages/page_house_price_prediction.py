@@ -38,7 +38,7 @@ def page_house_price_prediction_body():
     sale_price_sum = (sale_price_prediction_1 + sale_price_prediction_2 +
                       sale_price_prediction_3 + sale_price_prediction_4)
 
-    st.write(" # Sale Price Prediction:")
+    st.write("## Sale Price Prediction:")
 
     st.info(
         """
