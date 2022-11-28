@@ -2,6 +2,11 @@
 
 Link to live dashbard can be accessed [here](https://heritage-housing-issues.herokuapp.com/).
 
+![Banner image](/media/readme_images/banner.PNG)
+
+Note:
+* All cells have been run before pushing to repository before project submission but outputs for Panda profile reports have been cleared, as they make the file unreadable in Github, and cells using GridSearch CV, due to multiple print outs of Future Warning as outlined in Unfixed bugs section.
+
 ## Dataset Content
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We created then a fictitious user story where predictive analytics can be applied in a real project in the workplace. 
 * The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa; indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
@@ -196,6 +201,14 @@ Although your friend has an excellent understanding of property prices in her ow
    * Background and reason for inception of our project.
    * Our business requirements are set out.
    * The source and context of our dataset is explained. A table explaining each feature of our dataset is available to view.
+   
+<details>
+<summary> Project Summary Page</summary>
+
+![Dashboard Page 1: 1](/media/readme_images/summary-1.PNG)
+
+![Dashboard Page 1: 2](/media/readme_images/summary-2.PNG)
+</details>
  
  2. Page 2: Sale Price Correlation Study
     * This page was designed to answer our Business Requirement 1.
@@ -205,7 +218,17 @@ Although your friend has an excellent understanding of property prices in her ow
     * Further information on correlation within our dataset is presented also:
        * Heatmaps displaying correlation levels between variables can be viewed through checkboxes.
        * A heatmap displaying PPS levels can be viewed through a checkbox.
-  
+
+<details>
+<summary> Correlation Study Page</summary>
+
+![Dashboard Page 2: 1](/media/readme_images/corr-study-1.PNG)
+
+![Dashboard Page 2: 2](/media/readme_images/corr-study-2.PNG)
+
+![Dashboard Page 2: 3](/media/readme_images/corr-study-3.PNG)
+</details>
+
 3. Page 3: Project Hypotheses
     * Before analysis, it was known that we would want a page to describe our project hypotheses, our conclusions and how we validated them. 
     * This page confirms hypotheses 1 & 3:
@@ -213,7 +236,13 @@ Although your friend has an excellent understanding of property prices in her ow
        * Homes with garages tend to sell at higher prices than those without, and those with large garages sell at higher prices.
     * This page shows hypothesis to be inconclusive:
        * The OverallCond rating of a home does not necessarily lend to greater Sale Price, regardless of size.
-      
+ 
+<details>
+<summary> Hypothese Study Page</summary>
+
+![Dashboard Page 3](/media/readme_images/hyp-study.PNG)
+</details>
+
  4. Page 4: ML Model
     * This page displays the current iteration of the ML pipeline and will be of interest to technical users.
     * There is the option provided with a selectbox to view previous iterations of the pipeline also.
@@ -221,6 +250,16 @@ Although your friend has an excellent understanding of property prices in her ow
     * The performance of the current iteration, and whether it meets the performance criteria, is stated.
     * The regression plots for both the Train & Test Set are presented to the user.
  
+<details>
+<summary> ML Model Page</summary>
+
+![Dashboard Page 4: 1](/media/readme_images/model-1.PNG)
+
+![Dashboard Page 4: 2](/media/readme_images/model-2.PNG)
+
+![Dashboard Page 4: 3](/media/readme_images/model-3.PNG)
+</details>
+
  5. Page 5: House Price prediction
     * This page is designed to answer Business Requirement 2.
     * The inherited houses data is available to view.
@@ -228,6 +267,14 @@ Although your friend has an excellent understanding of property prices in her ow
     * The total sum the client can expect to receive from the sale of her inherited properties is displayed.
     * There are input widgets which will take values for the house attributes on which the model was trained.
         * A user can enter attributes for a specific property into the inputs and using the 'Predict Sale Price' button, can run the values through the ML model and output a predicted sale price for a house with those features.
+
+<details>
+<summary> House Price Prediction Page</summary>
+
+![Dashboard Page 5: 1](/media/readme_images/predict-1.PNG)
+
+![Dashboard Page 5: 2](/media/readme_images/predict-2.PNG)
+</details>
 
 ## Hyperparameters
 * The most up to date iteration of the pipeline contains ExtraTreesRegressor as the ML model.
