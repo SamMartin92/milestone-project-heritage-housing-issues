@@ -45,7 +45,7 @@ Although your friend has an excellent understanding of property prices in her ow
 
 
 ## Hypothesis and how to validate?
-* 1 - Larger houses will tend to have sell at a higher price. Therefore, houses with greater 1stFlrSF will have have a higher sales price.
+* 1 - Larger houses will tend to have sell at a higher price. Therefore, houses with greater 1stFlrSF will have a higher sales price.
   * This will be validated with a correlation study & relevant visualisations.
 
 * 2 - The overall condition of the house will result in a higher sale price. Therefore, we believe houses with a similar 1stFlrSF, with a higher OverallCond rating, will have higher Sales Price than those with a lower rating.
@@ -62,7 +62,7 @@ Although your friend has an excellent understanding of property prices in her ow
   * **As a data practitioner** I want relevant data **so that** data analysis can be conducted and an ML pipeline can be developed.
     * Bus Requirment: BR1 & BR2
     * Action Required: Fetching ata via Kaggle API
-      * Satisfied: Publily available housing data sourced from Kaggle
+      * Satisfied: Publicly available housing data sourced from Kaggle
   * **As a data practitioner** I want house attribute data for the inherited properties **so that** a prediction on their sale price can be made once ML pipeline developed.
     * Bus Requirment: BR2
     * Action Required: Fetching data via Kaggle API
@@ -186,30 +186,29 @@ Although your friend has an excellent understanding of property prices in her ow
 * Heuristics: Currently, we have no reliable means of estimating the sale price of a house in Ames, Iowa. While our client is quite knowledgeable about house prices in her native Belgium, what makes a house attractive or valuable in Iowa is unknown.
    * Within our project hypotheses, we have made some predictions but these are to be validated.
 
-* The training data to fit our model comes from a publily available Kaggle dataset. The dataset contains 1,460 rows of data, each representing a house sold in Ames, Iowa and containing up to 24 features, which hold data relating to a specific attribute of the house.
-  * The TrainSet of the data containfs 'SalePrice' as the target variable and all other varaibles, apart from, in the current iteration of our pipeline, 'EnclosedPorch' and 'WoodDeckSF'.
+* The training data to fit our model comes from a publicly available Kaggle dataset. The dataset contains 1,460 rows of data, each representing a house sold in Ames, Iowa and containing up to 24 features, which hold data relating to a specific attribute of the house.
+  * The TrainSet of the data contains 'SalePrice' as the target variable and all other variables.
 
 
 ## Dashboard Design
-* List all dashboard pages and its content, either block of information or widgets, like: buttons, checkbox, image, or any other item that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a give feature (for example, in the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
+
 1. Page 1: Project Summary
    * Background and reason for inception of our project.
    * Our business requirements are set out.
-   * The source and context of our dataset is explained. A table eplaining each feature of our dataset is available to view.
+   * The source and context of our dataset is explained. A table explaining each feature of our dataset is available to view.
  
  2. Page 2: Sale Price Correlation Study
     * This page was designed to answer our Business Requirement 1.
     * It contains the output of our correlation study which has taken place in the SalesPriceStudy notebook.
-    * A portion of our dataset is displayed and its context is explained..
-    * The conclusions of our correlation study are presented and a select box feature allows the user to choose a feature, from among those most strongly correlated with the sale price of a home, against Sale Price ranges.
+    * A portion of our dataset is displayed, and its context is explained.
+    * The conclusions of our correlation study are presented, and a select box feature allows the user to choose a feature, from among those most strongly correlated with the sale price of a home, against Sale Price ranges.
     * Further information on correlation within our dataset is presented also:
-       * Heatmaps displaying correlation levels bewteen variables can be viewed through checkboxes.
+       * Heatmaps displaying correlation levels between variables can be viewed through checkboxes.
        * A heatmap displaying PPS levels can be viewed through a checkbox.
   
 3. Page 3: Project Hypotheses
-    * Before analysis, it was known that we would want a page to describe our prject hypotheses, our conclusions and how we validated them. 
-    * This page confirms hypothesess 1 & 3:
+    * Before analysis, it was known that we would want a page to describe our project hypotheses, our conclusions and how we validated them. 
+    * This page confirms hypotheses 1 & 3:
        * Larger Houses (those with greater 1stFlrSF) tend to sell at higher prices.
        * Homes with garages tend to sell at higher prices than those without, and those with large garages sell at higher prices.
     * This page shows hypothesis to be inconclusive:
@@ -217,9 +216,9 @@ Although your friend has an excellent understanding of property prices in her ow
       
  4. Page 4: ML Model
     * This page displays the current iteration of the ML pipeline and will be of interest to technical users.
-    * There is the option provided with a selectbox to view orevious iterations of the pipeline also.
+    * There is the option provided with a selectbox to view previous iterations of the pipeline also.
     * The ML pipeline is displayed, including the features used to fit the model and their importance, are displayed.
-    * The performance of the current iteration, and whether it meets the performace criteria, is stated.
+    * The performance of the current iteration, and whether it meets the performance criteria, is stated.
     * The regression plots for both the Train & Test Set are presented to the user.
  
  5. Page 5: House Price prediction
@@ -233,11 +232,11 @@ Although your friend has an excellent understanding of property prices in her ow
 ## Hyperparameters
 * The most up to date iteration of the pipeline contains ExtraTreesRegressor as the ML model.
 * During modelling, hyperparameter optimisation was carried out in order to improve the model efficiency.
-* The choice of which hyperparameters to use in this process was decided by studying the [ExtraTrees Regressor docs](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html) and choosing from the optional algorithm parameters.
+* The choice of which hyperparameters to use in this process was decided by studying the [ExtraTreesRegressor docs](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html) and choosing from the optional algorithm parameters.
 * The ranges of values chosen to run through the hyperparameter optimisation process was decided upon by choosing from the ranges specified in the docs and zoning in on the most efficient parameter value ranges through multiple uses of the HyperparameterOptization() class contained in the notebook.
 
 ## Unfixed Bugs
-* There are no unfixed bugs to my knowledge in this project, however, when running HyperparameterOptization() using GridSearchCv from feature engine, a future warning is thrown: `/workspace/.pip-modules/lib/python3.8/site-packages/feature_engine/selection/smart_correlation_selection.py:271: FutureWarning: Passing a set as an indexer is deprecated and will raise in a future version. Use a list instead.
+* There are no unfixed bugs to my knowledge in this project, however, when running HyperparameterOptimization() using GridSearchCv from feature engine, a future warning is thrown: `/workspace/.pip-modules/lib/python3.8/site-packages/feature_engine/selection/smart_correlation_selection.py:271: FutureWarning: Passing a set as an indexer is deprecated and will raise in a future version. Use a list instead.
   f = X[feature_group].std().sort_values(ascending=False).index[0]`
 * I believe this is a pandas future warning and is caused by the Feature-engine library so have been unable to correct it. It causes no issue but prints out a warning for each fit in HyperparameterOptimization().
 
@@ -245,7 +244,7 @@ Although your friend has an excellent understanding of property prices in her ow
 * This site was developed in [Gitpod](https://www.gitpod.io/) and deployed to [Heroku](https://www.heroku.com/).
 * The site is a dashboard built with streamlit. 
 * The code to run the site was contained in [app.py](app.py).
-* It was developed by previewing the site in the browser by running the commadn `streamlit run app.py` in the command line and slecting the 5801 Port.
+* It was developed by previewing the site in the browser by running the command `streamlit run app.py` in the command line and selecting the 5801 Port.
 * Changes and entries to the workspace were committed and pushed to this repository.
 
 ### Setting up the project in Gitpod workspace:
@@ -267,7 +266,7 @@ enableCORS = false\n\
 web: sh setup.sh && streamlit run app.py
 ```
  * Once you are ready to deploy, create a requirements.txt file to specify all the libraries need to run this app. This can be created in your root directory by running the command `pip freeze --local > requirement.txt`.
- * Create runtime.txt file in root directory and specify the version of pyhton you are running the app on.
+ * Create runtime.txt file in root directory and specify the version of python you are running the app on.
  * See steps on how project was deployed to Heroku below.
 ### Heroku
 
@@ -278,7 +277,7 @@ web: sh setup.sh && streamlit run app.py
 2. At the Deploy tab, select GitHub as the deployment method.
 3. Select your repository name and click Search. Once it is found, click Connect.
 4. Select the branch you want to deploy, then click Deploy Branch.
-5. Ensure the version of python you are running in runtime.txt is compatible with your app's Heroku stack. If you need to set the heroku stack for your app, you can do so by running the following commands in the command line:
+5. Ensure the version of python you are running in runtime.txt is compatible with your app's Heroku stack. If you need to set the Heroku stack for your app, you can do so by running the following commands in the command line:
     * Install Heroku by running `pip install heroku'
     * Login by running `heroku login -i` and entering your login details
     * Set remote to Heroku `heroku git:remote -a <APP-NAME>`
@@ -288,24 +287,24 @@ web: sh setup.sh && streamlit run app.py
 
 ## Main Data Analysis and Machine Learning Libraries
 Below is a list of the main libraries used in the creation of this project. An exhaustive list of all libraries used can be seen in [requirements.txt](requirements.txt)
-* [Streamlit](https://streamlit.io/)- App framework on whihc the the dashboard was designed and created.
-* [Numpy](https://numpy.org/)- Used for working with arrays. Used to generate boolean arrays in plotting correlation heatmaps and returning Root Mean Squared Error in Regression Evaluation function
+* [Streamlit](https://streamlit.io/)- App framework on which the dashboard was designed and created.
+* [Numpy](https://numpy.org/)- Used for working with arrays. Used to generate Boolean arrays in plotting correlation heatmaps and returning Root Mean Squared Error in Regression Evaluation function
 * [Pandas](https://pandas.pydata.org/)- Data analysis tool used to convert the raw data for data frames and all methods of inspecting and manipulating the datasets
 * [pandas_profiling](https://pypi.org/project/pandas-profiling/)- Used to generate profile reports from DataFrames in our Jupyter Notebooks. These reports provide deeper insight into the datasets providing information such as missing data, mean, median, distribution, data counts and much more.
 * [Feature-engine](https://feature-engine.readthedocs.io/en/latest/)- A data engineering library with various transformer and feature selection methods for ML modelling. Some examples of its use in this project;  imputation of numerical and categorical data during data cleaning, categorical encoding to make data compatible for deeper data analysis, numerical transformation to normalise feature distribution during modelling, smart correlated selection step in ML pipeline creation and discretising data for the purpose of plotting data.
-* [Scikit-Learn](https://scikit-learn.org/)- A library which provides tools for data analytics. Scikit-Learn was used to create the pipeline,feature selection & splitting Train and Test sets. It is essential to the modelling stage as the algorithms tested on our data were imported from the library. sklearn methods were used to evaluate the performance algorithms and gridsearchcv was used during hyperparameter optimization in which the performance of different hyperparameters on given models were scored to test their efficiency in predictions. 
-* [XGBoost](https://xgboost.readthedocs.io/en/stable/)- A machine learning pipeline whih provides GradientBoosting methods. XGBRegressor was one of the algortihms tested druing pipeine optimization.
-* [matplotlib] (https://matplotlib.org/)- Matplotlib is a library used for creating data visiualisations. It was used to create visual plots in this project, mainly used in conjuction with Seaborn.
+* [Scikit-Learn](https://scikit-learn.org/)- A library which provides tools for data analytics. Scikit-Learn was used to create the pipeline, feature selection & splitting Train and Test sets. It is essential to the modelling stage as the algorithms tested on our data were imported from the library. sklearn methods were used to evaluate the performance algorithms and gridsearchcv was used during hyperparameter optimization in which the performance of different hyperparameters on given models were scored to test their efficiency in predictions. 
+* [XGBoost](https://xgboost.readthedocs.io/en/stable/)- A machine learning pipeline which provides GradientBoosting methods. XGBRegressor was one of the algorithms tested during pipeine optimization.
+* [matplotlib] (https://matplotlib.org/)- Matplotlib is a library used for creating data visualisations. It was used to create visual plots in this project, mainly used in conjunction with Seaborn.
 * [seaborn](https://seaborn.pydata.org/index.html)- Seaborn is a library built on matplotlib. It was used in the creation of data visualisations in this project, such as correlation histograms and line plots, heatmaps and for regression performance.
-* [ppscore](https://pypi.org/project/ppscore/)- A library used in predicting the predictive power scores of the varaibles in the dataset.
+* [ppscore](https://pypi.org/project/ppscore/)- A library used in predicting the predictive power scores of the variables in the dataset.
 
 
 ## Credits 
 
 ### Content 
 
-- Any custom functions taken and/or adapted from Code Institue lessons or other sources has been noted in Markdown or comments in the code where applicable.
-- The template for this repository was created by Code institue.
+- Any custom functions taken and/or adapted from Code Institute lessons or other sources has been noted in Markdown or comments in the code where applicable.
+- The template for this repository was created by Code Institute.
 - The idea for this project was presented in the CI lessons.
 - The dataset for this project was sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data)
 
