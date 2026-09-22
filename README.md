@@ -1,7 +1,5 @@
 # Heritage Housing Issues
 
-Link to live dashbard can be accessed [here](https://heritage-housing-issues.herokuapp.com/).
-
 ![Banner image](/media/readme_images/banner.PNG)
 
 Note:
