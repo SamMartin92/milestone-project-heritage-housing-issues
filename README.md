@@ -286,7 +286,6 @@ Although your friend has an excellent understanding of property prices in her ow
 * I believe this is a pandas future warning and is caused by the Feature-engine library so have been unable to correct it. It causes no issue but prints out a warning for each fit in HyperparameterOptimization().
 
 ## Deployment
-* This site was developed in [Gitpod](https://www.gitpod.io/) and deployed to [Heroku](https://www.heroku.com/).
 * The site is a dashboard built with streamlit. 
 * The code to run the site was contained in [app.py](app.py).
 * It was developed by previewing the site in the browser by running the command `streamlit run app.py` in the command line and selecting the 5801 Port.
